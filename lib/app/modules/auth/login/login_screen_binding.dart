@@ -15,4 +15,14 @@ class LoginScreenBinding implements Bindings {
 class LoginScreenController extends BaseController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+
+  @override
+  void onClose() {
+    super.onClose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
 }
+
+

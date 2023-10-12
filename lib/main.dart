@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             title: "Soul Connect",
             theme: ThemeData(
+              primaryColor: AppColors.gradientStart,
               scaffoldBackgroundColor: AppColors.gray100,
               appBarTheme: const AppBarTheme(color: AppColors.gray100),
             ),

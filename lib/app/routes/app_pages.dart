@@ -1,7 +1,11 @@
 import 'package:soul_connect/app/modules/auth/login/login_screen.dart';
 import 'package:soul_connect/app/modules/auth/login/login_screen_binding.dart';
+import 'package:soul_connect/app/modules/auth/mobile_login/mobile_screen.dart';
+import 'package:soul_connect/app/modules/auth/mobile_login/mobile_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/signup/signup_screen.dart';
 import 'package:soul_connect/app/modules/auth/signup/signup_screen_binding.dart';
+import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen.dart';
+import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen_binding.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
 import 'package:soul_connect/app/modules/home/home_screen.dart';
@@ -43,6 +47,16 @@ class AppPages {
       RouterName.signup,
       () => SignupScreen(),
       SignupScreenBinding(),
+    ),
+    _createPage(
+      RouterName.mobileLogin,
+      () => MobileLoginScreen(),
+      MobileLoginScreenBinding(),
+    ),
+    _createPage(
+      RouterName.verifyOtp,
+      () => VerifyOtpScreen(),
+      VerifyOtpScreenBinding(),
     ),
     //
     //TODO HOME Screen

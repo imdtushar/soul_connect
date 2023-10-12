@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:soul_connect/app/core/utils/secure_storage.dart';
+import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/app_values.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,6 +67,11 @@ class MyAppState extends State<MyApp> {
           initialRoute: AppPages.initial,
           initialBinding: InitialBinding(),
           getPages: AppPages.routes,
+          theme: ThemeData(
+            primaryColor: AppColors.gradientStart,
+            scaffoldBackgroundColor: AppColors.gray100,
+            appBarTheme: const AppBarTheme(color: AppColors.gray100),
+          ),
           // supportedLocales: _getSupportedLocal(),
           // theme: AppThemes.lightTheme,
           // locale: locale,

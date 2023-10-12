@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
@@ -6,7 +7,7 @@ import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/utils/validation_functions.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
-import 'package:soul_connect/app/modules/auth/signup/signup_screen_binding.dart';
+import 'package:soul_connect/app/modules/auth/mobile_login/mobile_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
@@ -14,8 +15,8 @@ import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
 import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
 
-class SignupScreen extends BaseView<SignupScreenController> {
-  SignupScreen({super.key});
+class MobileLoginScreen extends BaseView<MobileLoginScreenController> {
+  MobileLoginScreen({super.key});
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -44,12 +45,12 @@ class SignupScreen extends BaseView<SignupScreenController> {
                         onTap: () => Get.back(),
                       ),
                     ),
-                    SizedBox(height: height * 0.01),
+                    SizedBox(height: height * 0.05),
                     CustomImageView(
-                      svgPath: ImageConstant.signupBg,
+                      svgPath: ImageConstant.mobileLoginBg,
                       alignment: Alignment.center,
                     ),
-                    SizedBox(height: height * 0.034),
+                    SizedBox(height: height * 0.12),
                     BodyPartOfUi(controller: controller),
                   ],
                 ),
@@ -62,7 +63,7 @@ class SignupScreen extends BaseView<SignupScreenController> {
 
 //TODO Body Part Of UI
 class BodyPartOfUi extends StatelessWidget {
-  final SignupScreenController controller;
+  final MobileLoginScreenController controller;
 
   const BodyPartOfUi({
     super.key,
@@ -80,12 +81,12 @@ class BodyPartOfUi extends StatelessWidget {
         borderRadius: BorderRadiusStyle.customBorderTL30,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Center(
             child: Text(
-              'Sign Up',
+              'Enter your mobile number',
               style: poppinsSemiBold.copyWith(
                 fontSize: 25.sp,
                 color: AppColors.black,
@@ -95,84 +96,49 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 70.w),
+            child: Text(
+              'we’ll send you a verification code on the same number',
+              style: poppinsRegular.copyWith(
+                fontSize: 12.sp,
+                color: AppColors.black,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
           CustomTextFormField(
             isPasswordField: false,
-            controller: controller.emailController,
-            hintText: "Email",
             autofocus: false,
-            prefix: Image.asset(ImageConstant.emailIcTextField),
-            textInputType: TextInputType.emailAddress,
-            validator: (value) {
-              if (value == null || (!isValidEmail(value, isRequired: true))) {
-                return "Please enter valid email";
-              }
-              return null;
-            },
-          ),
-          SizedBox(height: 20.h),
-          CustomTextFormField(
-            isPasswordField: true,
-            autofocus: false,
-            controller: controller.passwordController,
-            hintText: "Password",
-            prefix: Image.asset(
-              ImageConstant.passwordIcTextField,
-              height: 10.h,
-            ),
+            controller: controller.mobileNumberController,
+            hintText: "Enter your mobile number",
             textInputAction: TextInputAction.done,
-            textInputType: TextInputType.visiblePassword,
+            textInputType: TextInputType.phone,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+              LengthLimitingTextInputFormatter(10),
+            ],
             validator: (value) {
-              if (value == null ||
-                  (!isValidPassword(value, isRequired: true))) {
-                return "Please enter valid password";
-              }
-              return null;
-            },
-          ),
-          SizedBox(height: 20.h),
-          CustomTextFormField(
-            isPasswordField: true,
-            controller: controller.confirmPasswordController,
-            hintText: 'Confirm Password',
-            prefix: Image.asset(
-              ImageConstant.passwordIcTextField,
-              height: 10.h,
-            ),
-            autofocus: false,
-            textInputAction: TextInputAction.done,
-            textInputType: TextInputType.visiblePassword,
-            validator: (value) {
-              if (value == null ||
-                  (!isValidPassword(value, isRequired: true))) {
-                return "Please enter valid password";
+              if (!isValidPhone(value)) {
+                return "Please enter valid phone number";
               }
               return null;
             },
           ),
           SizedBox(height: 20.h),
           CustomElevatedButton(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(RouterName.verifyOtp);
+            },
             text: "Next",
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(
               fontSize: 16.sp,
               color: AppColors.white,
-            ),
-          ),
-          TextButton(
-            style: ButtonStyle(
-              overlayColor: MaterialStateProperty.all(AppColors.gray100),
-            ),
-            onPressed: () {
-              Get.back();
-            },
-            child: Text(
-              'Having trouble signing in?',
-              style: poppinsRegular.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.black,
-              ),
             ),
           ),
         ],

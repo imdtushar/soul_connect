@@ -23,4 +23,19 @@ class ImageConstant {
 
   //SignUp BackGround
   static String signupBg = '$imagePath/signup_bg.svg';
+
+  //MobileLogin BackGround
+  static String mobileLoginBg = '$imagePath/mobile_login.svg';
+
+  //OtpVerify BackGround
+  static String otpVerifyBg = '$imagePath/verify_otp.svg';
+
+  //EmailIcon BackGround
+  static String emailIcon = '$imagePath/email_ic.png';
+
+  //Email Icon TextField
+  static String emailIcTextField = '$imagePath/email_ic_textfield.png';
+
+  //Password Icon TextField
+  static String passwordIcTextField = '$imagePath/pass_ic_textfield.png';
 }

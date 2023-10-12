@@ -50,14 +50,11 @@ class AppDecoration {
         color: AppColors.white,
         boxShadow: [
           BoxShadow(
-            color: AppColors.black.withOpacity(0.15),
-            spreadRadius: 1.h,
-            blurRadius: 1.h,
-            offset: const Offset(
-              0,
-              -2,
-            ),
-          ),
+            color: AppColors.shadow,
+            blurRadius: 32.r,
+            offset: const Offset(0, 0),
+            spreadRadius: 0,
+          )
         ],
       );
 

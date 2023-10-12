@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
+class CustomTextFormField extends StatefulWidget {
+  CustomTextFormField({
     Key? key,
     this.alignment,
     this.width,
@@ -13,7 +15,6 @@ class CustomTextFormField extends StatelessWidget {
     this.focusNode,
     this.autofocus = true,
     this.textStyle,
-    this.obscureText = false,
     this.textInputAction = TextInputAction.next,
     this.textInputType = TextInputType.text,
     this.maxLines,
@@ -28,13 +29,19 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.filled = false,
     this.validator,
-  }) : super(
-          key: key,
-        );
+    this.inputFormatters,
+    required this.isPasswordField,
+  }) : super(key: key) {
+    showPassword = isPasswordField;
+  }
 
   final Alignment? alignment;
 
+  final bool isPasswordField;
+
   final double? width;
+
+  bool showPassword = false;
 
   final EdgeInsetsGeometry? margin;
 
@@ -45,8 +52,6 @@ class CustomTextFormField extends StatelessWidget {
   final bool? autofocus;
 
   final TextStyle? textStyle;
-
-  final bool? obscureText;
 
   final TextInputAction? textInputAction;
 
@@ -74,75 +79,103 @@ class CustomTextFormField extends StatelessWidget {
 
   final bool? filled;
 
+  final List<TextInputFormatter>? inputFormatters;
+
   final FormFieldValidator<String>? validator;
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  @override
   Widget build(BuildContext context) {
-    return alignment != null
+    return widget.alignment != null
         ? Align(
-            alignment: alignment ?? Alignment.center,
+            alignment: widget.alignment ?? Alignment.center,
             child: textFormFieldWidget,
           )
         : textFormFieldWidget;
   }
 
   Widget get textFormFieldWidget => Container(
-        width: width ?? double.maxFinite,
-        margin: margin,
+        width: widget.width ?? double.maxFinite,
+        margin: widget.margin,
         child: TextFormField(
-          controller: controller,
-          focusNode: focusNode ?? FocusNode(),
-          autofocus: autofocus!,
-          style: textStyle ??
+          controller: widget.controller,
+          cursorColor: AppColors.black,
+          focusNode: widget.focusNode ?? FocusNode(),
+          autofocus: widget.autofocus!,
+          inputFormatters: widget.inputFormatters,
+          style: widget.textStyle ??
               poppinsRegular.copyWith(
                 fontSize: 14.sp,
                 color: AppColors.black,
               ),
-          obscureText: obscureText!,
-          textInputAction: textInputAction,
-          keyboardType: textInputType,
-          maxLines: maxLines ?? 1,
+          obscureText: widget.showPassword,
+          textInputAction: widget.textInputAction,
+          keyboardType: widget.textInputType,
+          maxLines: widget.maxLines ?? 1,
           decoration: decoration,
-          validator: validator,
+          validator: widget.validator,
         ),
       );
 
   InputDecoration get decoration => InputDecoration(
-        hintText: hintText ?? "",
-        hintStyle: hintStyle ??
+        hintText: widget.hintText ?? "",
+        hintStyle: widget.hintStyle ??
             poppinsRegular.copyWith(
               fontSize: 14.sp,
               color: AppColors.black.withOpacity(0.5),
             ),
-        prefixIcon: prefix,
-        prefixIconConstraints: prefixConstraints,
-        suffixIcon: suffix,
-        suffixIconConstraints: suffixConstraints,
+        prefixIcon: widget.prefix,
+        prefixIconConstraints: widget.prefixConstraints,
+        suffixIcon: widget.suffix ??
+            (widget.isPasswordField
+                ? InkWell(
+                    onTap: () {
+                      setState(() {
+                        widget.showPassword = !widget.showPassword;
+                      });
+                    },
+                    child: SvgPicture.asset(
+                      widget.showPassword
+                          ? "assets/images/pass_view.svg"
+                          : "assets/images/pass_hide.svg",
+                      fit: BoxFit.none,
+                      height: widget.showPassword ? 10.h : 18.h,
+                      width: widget.showPassword ? 18.w : 22.w,
+                    ),
+                  )
+                : SizedBox(
+                    height: 15.w,
+                  )),
+        suffixIconConstraints: widget.suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.all(9.h),
-        fillColor: fillColor,
-        filled: filled,
-        border: borderDecoration ??
+        contentPadding: widget.contentPadding ?? EdgeInsets.all(9.h),
+        fillColor: widget.fillColor,
+        filled: widget.filled,
+        border: widget.borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.h),
+              borderRadius: BorderRadius.circular(20.r),
               borderSide: BorderSide(
                 color: AppColors.black.withOpacity(0.4),
                 width: 1,
               ),
             ),
-        enabledBorder: borderDecoration ??
+        enabledBorder: widget.borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.h),
+              borderRadius: BorderRadius.circular(20.r),
               borderSide: BorderSide(
                 color: AppColors.black.withOpacity(0.4),
                 width: 1,
               ),
             ),
-        focusedBorder: borderDecoration ??
+        focusedBorder: widget.borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.h),
-              borderSide: BorderSide(
-                color: AppColors.black.withOpacity(0.4),
+              borderRadius: BorderRadius.circular(20.r),
+              borderSide: const BorderSide(
+                color: AppColors.gradientStart,
                 width: 1,
               ),
             ),
@@ -152,7 +185,7 @@ class CustomTextFormField extends StatelessWidget {
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
   static OutlineInputBorder get outlineBlackTL5 => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.h),
+        borderRadius: BorderRadius.circular(20.r),
         borderSide: BorderSide(
           color: AppColors.black.withOpacity(0.5),
           width: 1,
@@ -160,7 +193,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
       );
 
   static OutlineInputBorder get fillPrimaryContainer => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.h),
+        borderRadius: BorderRadius.circular(20.r),
         borderSide: BorderSide.none,
       );
 }

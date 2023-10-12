@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-
   static const Color bgColor = Color(0xffF2F6FA);
 
   //New Color
@@ -12,6 +11,6 @@ abstract class AppColors {
   static const Color containerBg = Color(0xFF999999);
   static const Color primaryColor = Color(0XFFFF3061);
   static const Color black = Color(0xff000000);
-
-
+  static const Color shadow = Color(0x26000000);
+  static const Color paragraphHint = Color(0xff707070);
 }

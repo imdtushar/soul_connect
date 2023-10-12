@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
@@ -27,26 +28,25 @@ class LoginScreen extends BaseView<LoginScreenController> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child:   Container(
-              width: double.infinity,
-              color: AppColors.gray100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: height * 0.02),
-                  CustomImageView(
-                    svgPath: ImageConstant.loginBgImg,
-                  ),
-                  SizedBox(height: height * 0.04),
-                  BodyPartOfUi(controller: controller),
-                ],
+            key: _formKey,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Container(
+                width: double.infinity,
+                color: AppColors.gray100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: height * 0.02),
+                    CustomImageView(
+                      svgPath: ImageConstant.loginBgImg,
+                    ),
+                    SizedBox(height: height * 0.04),
+                    BodyPartOfUi(controller: controller),
+                  ],
+                ),
               ),
-            ),
-          )
-        ),
+            )),
       ),
     );
   }
@@ -109,9 +109,11 @@ class BodyPartOfUi extends StatelessWidget {
             height: 30.h,
           ),
           CustomTextFormField(
+            isPasswordField: false,
             controller: controller.emailController,
             hintText: "Email",
             autofocus: false,
+            prefix: Image.asset(ImageConstant.emailIcTextField),
             textInputType: TextInputType.emailAddress,
             validator: (value) {
               if (value == null || (!isValidEmail(value, isRequired: true))) {
@@ -122,11 +124,16 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           CustomTextFormField(
+            isPasswordField: true,
             autofocus: false,
             controller: controller.passwordController,
             hintText: "Password",
             textInputAction: TextInputAction.done,
             textInputType: TextInputType.visiblePassword,
+            prefix: Image.asset(
+              ImageConstant.passwordIcTextField,
+              height: 10.h,
+            ),
             validator: (value) {
               if (value == null ||
                   (!isValidPassword(value, isRequired: true))) {
@@ -134,7 +141,6 @@ class BodyPartOfUi extends StatelessWidget {
               }
               return null;
             },
-            obscureText: true,
           ),
           SizedBox(height: 20.h),
           CustomElevatedButton(
@@ -147,21 +153,18 @@ class BodyPartOfUi extends StatelessWidget {
               color: AppColors.white,
             ),
           ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: TextButton(
-              style: ButtonStyle(
-                overlayColor: MaterialStateProperty.all(AppColors.gray100),
-              ),
-              onPressed: () {
-                Get.toNamed(RouterName.signup);
-              },
-              child: Text(
-                'Sign up?',
-                style: poppinsRegular.copyWith(
-                  fontSize: 12.sp,
-                  color: AppColors.black,
-                ),
+          TextButton(
+            style: ButtonStyle(
+              overlayColor: MaterialStateProperty.all(AppColors.gray100),
+            ),
+            onPressed: () {
+              Get.toNamed(RouterName.signup);
+            },
+            child: Text(
+              'Sign up?',
+              style: poppinsRegular.copyWith(
+                fontSize: 12.sp,
+                color: AppColors.black,
               ),
             ),
           ),
@@ -224,6 +227,7 @@ class SocialMediaLogin extends StatelessWidget {
       children: [
         SocialMediaButton(
           image: ImageConstant.phoneIcContainer,
+          onTap: () => Get.toNamed(RouterName.mobileLogin),
         ),
         SocialMediaButton(
           image: ImageConstant.googleWithLogin,
