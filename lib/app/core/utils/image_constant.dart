@@ -1,0 +1,26 @@
+class ImageConstant {
+
+  // Image folder path
+  static String imagePath = 'assets/images';
+
+  // Splash images
+  static String splashBgImg = '$imagePath/splash_img.png';
+
+  //Login image
+  static String loginBgImg = '$imagePath/login_bg.svg';
+
+  // phone Icon Container
+  static String phoneIcContainer = '$imagePath/phone_social.svg';
+
+  //Google With Login
+  static String googleWithLogin = '$imagePath/google_social.svg';
+
+  //Apple With Login
+  static String appleLogin = '$imagePath/apple_social.svg';
+
+  //BackButton
+  static String backButton = '$imagePath/back_button.svg';
+
+  //SignUp BackGround
+  static String signupBg = '$imagePath/signup_bg.svg';
+}
