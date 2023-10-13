@@ -37,7 +37,10 @@ class VerifyOtpScreen extends BaseView<VerifyOtpScreenController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.r),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 8.h,
+                      ),
                       child: CustomImageView(
                         svgPath: ImageConstant.backButton,
                         onTap: () => Get.back(),

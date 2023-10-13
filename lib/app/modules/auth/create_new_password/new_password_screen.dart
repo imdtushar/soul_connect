@@ -8,6 +8,7 @@ import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
+import 'package:soul_connect/app/modules/widget/common_textfield.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
@@ -37,7 +38,10 @@ class NewPasswordScreen extends BaseView<NewPasswordScreenController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.r),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 8.h,
+                      ),
                       child: CustomImageView(
                         svgPath: ImageConstant.backButton,
                         onTap: () => Get.back(),
@@ -96,72 +100,31 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Create Password',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
-          CustomTextFormField(
-            isPasswordField: true,
-            autofocus: false,
+          CommonTextField(
+            label: 'Create Password',
             controller: controller.passwordController,
-            hintText: "Password",
-            prefix: Image.asset(
-              ImageConstant.passwordIcTextField,
-              height: 8.h,
-            ),
-            textInputAction: TextInputAction.next,
-            textInputType: TextInputType.visiblePassword,
-            validator: (value) {
-              if (value == null ||
-                  (!isValidPassword(value, isRequired: true))) {
-                return "Please enter valid password";
-              }
-              return null;
-            },
-          ),
-          SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Confirm Password',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
-          CustomTextFormField(
+            hintText: 'Create Password',
             isPasswordField: true,
+            prefixImage: ImageConstant.passwordIcTextField,
+            prefixHeight: 4.h,
+            prefixWidth: 2,
+            textInputType: TextInputType.visiblePassword,
+            returnMsg: 'Please enter valid password',
+            textInputAction: TextInputAction.next,
+          ),
+          CommonTextField(
+            label: 'Confirm Password',
             controller: controller.confirmPasswordController,
             hintText: 'Confirm Password',
-            prefix: Image.asset(
-              ImageConstant.passwordIcTextField,
-              height: 8.h,
-            ),
-            autofocus: false,
-            textInputAction: TextInputAction.done,
+            isPasswordField: true,
+            prefixImage: ImageConstant.passwordIcTextField,
+            prefixHeight: 4.h,
+            prefixWidth: 2,
             textInputType: TextInputType.visiblePassword,
-            validator: (value) {
-              if (value == null ||
-                  (!isValidPassword(value, isRequired: true))) {
-                return "Please enter valid password";
-              }
-              return null;
-            },
+            returnMsg: 'Please enter valid password',
+            textInputAction: TextInputAction.done,
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 10.h),
           CustomElevatedButton(
             onTap: () {},
             text: "Next",

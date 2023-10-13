@@ -20,9 +20,13 @@ import 'package:soul_connect/app/modules/matches/matches_screen.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen_binding.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen_binding.dart';
+import 'package:soul_connect/app/modules/sexual/sexual_screen.dart';
+import 'package:soul_connect/app/modules/sexual/sexual_screen_binding.dart';
 import 'package:soul_connect/app/modules/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:soul_connect/app/modules/your_self/your_self_screen.dart';
+import 'package:soul_connect/app/modules/your_self/your_self_screen_binding.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
 
 class AppPages {
@@ -71,6 +75,16 @@ class AppPages {
       RouterName.forgotPassword,
       () => ForgotPassScreen(),
       ForgotPassScreenBinding(),
+    ),
+    _createPage(
+      RouterName.yourSelf,
+      () => YourSelfScreen(),
+      YourSelfScreenBinding(),
+    ),
+    _createPage(
+      RouterName.sexualScreen,
+      () => SexualScreen(),
+      SexualScreenBinding(),
     ),
     //
     //TODO HOME Screen

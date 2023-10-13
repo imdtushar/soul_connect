@@ -10,6 +10,7 @@ import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/mobile_login/mobile_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
+import 'package:soul_connect/app/modules/widget/common_textfield.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
@@ -40,7 +41,10 @@ class MobileLoginScreen extends BaseView<MobileLoginScreenController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.r),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 8.h,
+                      ),
                       child: CustomImageView(
                         svgPath: ImageConstant.backButton,
                         onTap: () => Get.back(),
@@ -51,7 +55,7 @@ class MobileLoginScreen extends BaseView<MobileLoginScreenController> {
                       svgPath: ImageConstant.mobileLoginBg,
                       alignment: Alignment.center,
                     ),
-                    SizedBox(height: height * 0.10),
+                    SizedBox(height: height * 0.09),
                     BodyPartOfUi(controller: controller),
                   ],
                 ),
@@ -74,12 +78,8 @@ class BodyPartOfUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        left: 24.w,
-        right: 24.w,
-        top: 20.h,
-        bottom: 20.h
-      ),
+      padding:
+          EdgeInsets.only(left: 24.w, right: 24.w, top: 20.h, bottom: 20.h),
       decoration: AppDecoration.outlineBlack900.copyWith(
         borderRadius: BorderRadiusStyle.customBorderTL30,
       ),
@@ -113,26 +113,13 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Enter your mobile number',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
-          CustomTextFormField(
-            isPasswordField: false,
-            autofocus: false,
+
+          CommonTextField(
+            label: 'Enter your mobile number',
             controller: controller.mobileNumberController,
-            hintText: "Enter your mobile number",
-            textInputAction: TextInputAction.done,
-            textInputType: TextInputType.phone,
+            hintText: 'Enter your mobile number',
+            isPasswordField: false,
+            prefixIsImage: false,
             prefix: CountryCodePicker(
               showDropDownButton: false,
               onChanged: (value) {
@@ -152,14 +139,11 @@ class BodyPartOfUi extends StatelessWidget {
               FilteringTextInputFormatter.digitsOnly,
               LengthLimitingTextInputFormatter(10),
             ],
-            validator: (value) {
-              if (!isValidPhone(value)) {
-                return "Please enter valid phone number";
-              }
-              return null;
-            },
+            textInputType: TextInputType.phone,
+            textInputAction: TextInputAction.done,
+            returnMsg: 'Please enter valid phone number',
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 10.h),
           CustomElevatedButton(
             onTap: () {
               Get.toNamed(RouterName.verifyOtp);

@@ -44,4 +44,7 @@ class ImageConstant {
 
   //Forgot Password Screen BG
   static String forgotPasswordBg = '$imagePath/forgot_password.svg';
+
+  //List Select Image Password Screen BG
+  static String checkImg = '$imagePath/check_ic.svg';
 }

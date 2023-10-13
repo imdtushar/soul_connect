@@ -9,6 +9,7 @@ import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/login/login_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
+import 'package:soul_connect/app/modules/widget/common_textfield.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
@@ -42,7 +43,7 @@ class LoginScreen extends BaseView<LoginScreenController> {
                   CustomImageView(
                     svgPath: ImageConstant.loginBgImg,
                   ),
-                  SizedBox(height: height * 0.04),
+                  SizedBox(height: height * 0.03),
                   BodyPartOfUi(controller: controller),
                 ],
               ),
@@ -114,73 +115,31 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 16.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 20.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Email',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
-          CustomTextFormField(
-            isPasswordField: false,
+          CommonTextField(
+            label: 'Email',
             controller: controller.emailController,
-            hintText: "Email",
-            autofocus: false,
-            prefix: Image.asset(
-              ImageConstant.emailIcTextField,
-              width: 10.w,
-            ),
+            hintText: 'Email',
+            isPasswordField: false,
+            prefixImage: ImageConstant.emailIcTextField,
+            prefixWidth: 10.w,
             textInputType: TextInputType.emailAddress,
-            validator: (value) {
-              if (value == null || (!isValidEmail(value, isRequired: true))) {
-                return "Please enter valid email";
-              }
-              return null;
-            },
+            returnMsg: 'Please enter valid email',
           ),
-          SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 20.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Password',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
-          CustomTextFormField(
-            isPasswordField: true,
-            autofocus: false,
+          CommonTextField(
+            label: 'Password',
             controller: controller.passwordController,
-            hintText: "Password",
-            textInputAction: TextInputAction.done,
+            hintText: 'Password',
+            isPasswordField: true,
+            prefixImage: ImageConstant.passwordIcTextField,
+            prefixHeight: 8.h,
             textInputType: TextInputType.visiblePassword,
-            prefix: Image.asset(
-              ImageConstant.passwordIcTextField,
-              height: 8.h,
-            ),
-            validator: (value) {
-              if (value == null ||
-                  (!isValidPassword(value, isRequired: true))) {
-                return "Please enter valid password";
-              }
-              return null;
-            },
+            returnMsg: 'Please enter valid password',
           ),
           SizedBox(height: 20.h),
           CustomElevatedButton(
             onTap: () {
               FocusScope.of(context).unfocus();
+              Get.toNamed(RouterName.yourSelf);
             },
             text: "Continue with email",
             buttonStyle: CustomButtonStyles.none,
