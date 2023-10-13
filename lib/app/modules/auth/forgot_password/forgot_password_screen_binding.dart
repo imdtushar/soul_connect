@@ -1,18 +1,19 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_controller.dart';
 
-class MobileLoginScreenBinding implements Bindings {
+class ForgotPassScreenBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(
-          () => MobileLoginScreenController(),
+          () => ForgotPassScreenController(),
       fenix: true,
     );
   }
 }
 
-class MobileLoginScreenController extends BaseController {
+class ForgotPassScreenController extends BaseController {
+
   TextEditingController mobileNumberController = TextEditingController();
 
   // CountyCode
@@ -23,4 +24,5 @@ class MobileLoginScreenController extends BaseController {
     super.onClose();
     mobileNumberController.dispose();
   }
+
 }

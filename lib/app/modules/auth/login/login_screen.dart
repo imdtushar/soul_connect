@@ -28,25 +28,27 @@ class LoginScreen extends BaseView<LoginScreenController> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Container(
-                width: double.infinity,
-                color: AppColors.gray100,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height: height * 0.02),
-                    CustomImageView(
-                      svgPath: ImageConstant.loginBgImg,
-                    ),
-                    SizedBox(height: height * 0.04),
-                    BodyPartOfUi(controller: controller),
-                  ],
-                ),
+          key: _formKey,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Container(
+              width: double.infinity,
+              color: AppColors.gray100,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(height: height * 0.02),
+                  CustomImageView(
+                    svgPath: ImageConstant.loginBgImg,
+                  ),
+                  SizedBox(height: height * 0.04),
+                  BodyPartOfUi(controller: controller),
+                ],
               ),
-            )),
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -64,15 +66,17 @@ class BodyPartOfUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 24.w,
-        vertical: 26.h,
+      padding: EdgeInsets.only(
+        left: 24.w,
+        right: 24.w,
+        top: 20.h,
       ),
       decoration: AppDecoration.outlineBlack900.copyWith(
         borderRadius: BorderRadiusStyle.customBorderTL30,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 50.w),
@@ -90,11 +94,13 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          Text(
-            'Sign up or Log In',
-            style: poppinsSemiBold.copyWith(
-              fontSize: 25.sp,
-              color: AppColors.black,
+          Center(
+            child: Text(
+              'Sign up or Log In',
+              style: poppinsSemiBold.copyWith(
+                fontSize: 25.sp,
+                color: AppColors.black,
+              ),
             ),
           ),
           SizedBox(
@@ -102,18 +108,34 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           const SocialMediaLogin(),
           SizedBox(
-            height: 30.h,
+            height: 15.h,
           ),
           const ORUi(),
           SizedBox(
-            height: 30.h,
+            height: 16.h,
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.w,
+              bottom: 4.h,
+            ),
+            child: Text(
+              'Email',
+              style: poppinsRegular.copyWith(
+                fontSize: 14.sp,
+                color: AppColors.black.withOpacity(0.5),
+              ),
+            ),
           ),
           CustomTextFormField(
             isPasswordField: false,
             controller: controller.emailController,
             hintText: "Email",
             autofocus: false,
-            prefix: Image.asset(ImageConstant.emailIcTextField),
+            prefix: Image.asset(
+              ImageConstant.emailIcTextField,
+              width: 10.w,
+            ),
             textInputType: TextInputType.emailAddress,
             validator: (value) {
               if (value == null || (!isValidEmail(value, isRequired: true))) {
@@ -122,7 +144,20 @@ class BodyPartOfUi extends StatelessWidget {
               return null;
             },
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.w,
+              bottom: 4.h,
+            ),
+            child: Text(
+              'Password',
+              style: poppinsRegular.copyWith(
+                fontSize: 14.sp,
+                color: AppColors.black.withOpacity(0.5),
+              ),
+            ),
+          ),
           CustomTextFormField(
             isPasswordField: true,
             autofocus: false,
@@ -132,7 +167,7 @@ class BodyPartOfUi extends StatelessWidget {
             textInputType: TextInputType.visiblePassword,
             prefix: Image.asset(
               ImageConstant.passwordIcTextField,
-              height: 10.h,
+              height: 8.h,
             ),
             validator: (value) {
               if (value == null ||
@@ -144,7 +179,9 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           CustomElevatedButton(
-            onTap: () {},
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
             text: "Continue with email",
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
@@ -153,20 +190,42 @@ class BodyPartOfUi extends StatelessWidget {
               color: AppColors.white,
             ),
           ),
-          TextButton(
-            style: ButtonStyle(
-              overlayColor: MaterialStateProperty.all(AppColors.gray100),
-            ),
-            onPressed: () {
-              Get.toNamed(RouterName.signup);
-            },
-            child: Text(
-              'Sign up?',
-              style: poppinsRegular.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.black,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                style: ButtonStyle(
+                  overlayColor: MaterialStateProperty.all(AppColors.gray100),
+                ),
+                onPressed: () {
+                  FocusScope.of(context).unfocus();
+                  Get.toNamed(RouterName.forgotPassword);
+                },
+                child: Text(
+                  'Forgot Password?',
+                  style: poppinsRegular.copyWith(
+                    fontSize: 12.sp,
+                    color: AppColors.black,
+                  ),
+                ),
               ),
-            ),
+              TextButton(
+                style: ButtonStyle(
+                  overlayColor: MaterialStateProperty.all(AppColors.gray100),
+                ),
+                onPressed: () {
+                  FocusScope.of(context).unfocus();
+                  Get.toNamed(RouterName.signup);
+                },
+                child: Text(
+                  'Sign up?',
+                  style: poppinsRegular.copyWith(
+                    fontSize: 12.sp,
+                    color: AppColors.black,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

@@ -11,6 +11,7 @@ import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
 import 'package:soul_connect/app/modules/widget/custom_pin_code_text_field.dart';
+import 'package:soul_connect/app/routes/router_name.dart';
 
 class VerifyOtpScreen extends BaseView<VerifyOtpScreenController> {
   VerifyOtpScreen({super.key});
@@ -125,7 +126,7 @@ class BodyPartOfUi extends StatelessWidget {
             height: 30.h,
           ),
           CustomElevatedButton(
-            onTap: () {},
+            onTap: () => Get.toNamed(RouterName.newPassword),
             text: "Verify",
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,

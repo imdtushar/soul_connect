@@ -157,7 +157,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         filled: widget.filled,
         border: widget.borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.r),
+              borderRadius: BorderRadius.circular(30.r),
               borderSide: BorderSide(
                 color: AppColors.black.withOpacity(0.4),
                 width: 1,
@@ -165,7 +165,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ),
         enabledBorder: widget.borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.r),
+              borderRadius: BorderRadius.circular(30.r),
               borderSide: BorderSide(
                 color: AppColors.black.withOpacity(0.4),
                 width: 1,
@@ -173,7 +173,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ),
         focusedBorder: widget.borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.r),
+              borderRadius: BorderRadius.circular(30.r),
               borderSide: const BorderSide(
                 color: AppColors.gradientStart,
                 width: 1,

@@ -38,4 +38,10 @@ class ImageConstant {
 
   //Password Icon TextField
   static String passwordIcTextField = '$imagePath/pass_ic_textfield.png';
+
+  //Create Password Screen BG
+  static String createPasswordBG = '$imagePath/create_password.svg';
+
+  //Forgot Password Screen BG
+  static String forgotPasswordBg = '$imagePath/forgot_password.svg';
 }

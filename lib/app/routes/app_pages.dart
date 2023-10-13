@@ -1,3 +1,7 @@
+import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen.dart';
+import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen_binding.dart';
+import 'package:soul_connect/app/modules/auth/forgot_password/forgot_password_screen.dart';
+import 'package:soul_connect/app/modules/auth/forgot_password/forgot_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/login/login_screen.dart';
 import 'package:soul_connect/app/modules/auth/login/login_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/mobile_login/mobile_screen.dart';
@@ -57,6 +61,16 @@ class AppPages {
       RouterName.verifyOtp,
       () => VerifyOtpScreen(),
       VerifyOtpScreenBinding(),
+    ),
+    _createPage(
+      RouterName.newPassword,
+      () => NewPasswordScreen(),
+      NewPasswordScreenBinding(),
+    ),
+    _createPage(
+      RouterName.forgotPassword,
+      () => ForgotPassScreen(),
+      ForgotPassScreenBinding(),
     ),
     //
     //TODO HOME Screen

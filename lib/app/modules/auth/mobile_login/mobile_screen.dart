@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +51,7 @@ class MobileLoginScreen extends BaseView<MobileLoginScreenController> {
                       svgPath: ImageConstant.mobileLoginBg,
                       alignment: Alignment.center,
                     ),
-                    SizedBox(height: height * 0.12),
+                    SizedBox(height: height * 0.10),
                     BodyPartOfUi(controller: controller),
                   ],
                 ),
@@ -73,9 +74,11 @@ class BodyPartOfUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 24.w,
-        vertical: 26.h,
+      padding: EdgeInsets.only(
+        left: 24.w,
+        right: 24.w,
+        top: 20.h,
+        bottom: 20.h
       ),
       decoration: AppDecoration.outlineBlack900.copyWith(
         borderRadius: BorderRadiusStyle.customBorderTL30,
@@ -110,6 +113,19 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 14.w,
+              bottom: 4.h,
+            ),
+            child: Text(
+              'Enter your mobile number',
+              style: poppinsRegular.copyWith(
+                fontSize: 14.sp,
+                color: AppColors.black.withOpacity(0.5),
+              ),
+            ),
+          ),
           CustomTextFormField(
             isPasswordField: false,
             autofocus: false,
@@ -117,6 +133,21 @@ class BodyPartOfUi extends StatelessWidget {
             hintText: "Enter your mobile number",
             textInputAction: TextInputAction.done,
             textInputType: TextInputType.phone,
+            prefix: CountryCodePicker(
+              showDropDownButton: false,
+              onChanged: (value) {
+                controller.countryCode = value.toString();
+                controller.update();
+              },
+              padding: EdgeInsets.only(left: 6.w),
+              flagWidth: 24,
+              initialSelection: 'IN',
+              favorite: const ['+91', 'IN'],
+              showCountryOnly: false,
+              showOnlyCountryWhenClosed: false,
+              alignLeft: false,
+              showFlag: true,
+            ),
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
               LengthLimitingTextInputFormatter(10),
@@ -133,7 +164,7 @@ class BodyPartOfUi extends StatelessWidget {
             onTap: () {
               Get.toNamed(RouterName.verifyOtp);
             },
-            text: "Next",
+            text: "Send",
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(
