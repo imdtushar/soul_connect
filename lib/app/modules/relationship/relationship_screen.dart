@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
@@ -8,6 +9,7 @@ import 'package:soul_connect/app/modules/relationship/relationship_screen_bindin
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
+import 'package:soul_connect/app/routes/router_name.dart';
 
 class RelationShipScreen extends BaseView<RelationShipScreenController> {
   RelationShipScreen({super.key});
@@ -35,7 +37,7 @@ class RelationShipScreen extends BaseView<RelationShipScreenController> {
               child: CustomElevatedButton(
                 onTap: () {
                   FocusScope.of(context).unfocus();
-                  // Get.toNamed(RouterName.sexualScreen);
+                  Get.toNamed(RouterName.presentation);
                 },
                 text: "Next",
                 buttonStyle: CustomButtonStyles.none,

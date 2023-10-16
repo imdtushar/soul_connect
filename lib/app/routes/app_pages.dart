@@ -18,6 +18,8 @@ import 'package:soul_connect/app/modules/main/bindings/main_binding.dart';
 import 'package:soul_connect/app/modules/main/views/main_view.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen_binding.dart';
+import 'package:soul_connect/app/modules/presentation/presentation_screen.dart';
+import 'package:soul_connect/app/modules/presentation/presentation_screen_binding.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/relationship/relationship_screen.dart';
@@ -94,6 +96,11 @@ class AppPages {
       RouterName.relationShipScreen,
       () => RelationShipScreen(),
       RelationShipScreenBinding(),
+    ),
+    _createPage(
+      RouterName.presentation,
+      () => PresentationScreen(),
+      PresentationScreenBinding(),
     ),
     _createPage(
       RouterName.home,

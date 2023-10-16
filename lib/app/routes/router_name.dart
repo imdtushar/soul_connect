@@ -10,6 +10,7 @@ class RouterName {
   static const String yourSelf = '/yourSelf';
   static const String sexualScreen = '/sexualScreen';
   static const String relationShipScreen = '/relationShipScreen';
+  static const String presentation = '/presentation';
 
   static const String home = '/home';
   static const String profile = '/profile';
