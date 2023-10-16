@@ -20,6 +20,8 @@ import 'package:soul_connect/app/modules/matches/matches_screen.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen_binding.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen_binding.dart';
+import 'package:soul_connect/app/modules/relationship/relationship_screen.dart';
+import 'package:soul_connect/app/modules/relationship/relationship_screen_binding.dart';
 import 'package:soul_connect/app/modules/sexual/sexual_screen.dart';
 import 'package:soul_connect/app/modules/sexual/sexual_screen_binding.dart';
 import 'package:soul_connect/app/modules/splash/splash.dart';
@@ -76,6 +78,8 @@ class AppPages {
       () => ForgotPassScreen(),
       ForgotPassScreenBinding(),
     ),
+    //
+    //TODO HOME Screen
     _createPage(
       RouterName.yourSelf,
       () => YourSelfScreen(),
@@ -86,8 +90,11 @@ class AppPages {
       () => SexualScreen(),
       SexualScreenBinding(),
     ),
-    //
-    //TODO HOME Screen
+    _createPage(
+      RouterName.relationShipScreen,
+      () => RelationShipScreen(),
+      RelationShipScreenBinding(),
+    ),
     _createPage(
       RouterName.home,
       () => HomeScreen(),

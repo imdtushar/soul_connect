@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
@@ -9,6 +10,7 @@ import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
+import 'package:soul_connect/app/routes/router_name.dart';
 
 class SexualScreen extends BaseView<SexualScreenController> {
   SexualScreen({super.key});
@@ -40,7 +42,7 @@ class SexualScreen extends BaseView<SexualScreenController> {
               child: CustomElevatedButton(
                 onTap: () {
                   FocusScope.of(context).unfocus();
-                  // Get.toNamed(RouterName.sexualScreen);
+                  Get.toNamed(RouterName.relationShipScreen);
                 },
                 text: "Next",
                 buttonStyle: CustomButtonStyles.none,
@@ -52,8 +54,6 @@ class SexualScreen extends BaseView<SexualScreenController> {
               ),
             ),
           ],
-
-
         ),
       ),
     );

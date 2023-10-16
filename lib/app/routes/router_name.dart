@@ -9,6 +9,7 @@ class RouterName {
   static const String forgotPassword = '/forgotPassword';
   static const String yourSelf = '/yourSelf';
   static const String sexualScreen = '/sexualScreen';
+  static const String relationShipScreen = '/relationShipScreen';
 
   static const String home = '/home';
   static const String profile = '/profile';
