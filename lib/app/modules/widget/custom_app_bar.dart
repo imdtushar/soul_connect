@@ -69,6 +69,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Divider(
           color: AppColors.dividerColor,
+          height: 1,
         ),
       ],
     );
