@@ -11,6 +11,8 @@ class RouterName {
   static const String sexualScreen = '/sexualScreen';
   static const String relationShipScreen = '/relationShipScreen';
   static const String presentation = '/presentation';
+  static const String age = '/age';
+  static const String likeToDate = '/likeToDate';
 
   static const String home = '/home';
   static const String profile = '/profile';

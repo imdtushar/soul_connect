@@ -1,3 +1,5 @@
+import 'package:soul_connect/app/modules/age/age_screen.dart';
+import 'package:soul_connect/app/modules/age/age_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen.dart';
 import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/forgot_password/forgot_password_screen.dart';
@@ -14,6 +16,8 @@ import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
 import 'package:soul_connect/app/modules/home/home_screen.dart';
 import 'package:soul_connect/app/modules/home/home_screen_binding.dart';
+import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen.dart';
+import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen_binding.dart';
 import 'package:soul_connect/app/modules/main/bindings/main_binding.dart';
 import 'package:soul_connect/app/modules/main/views/main_view.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen.dart';
@@ -121,6 +125,16 @@ class AppPages {
       RouterName.matches,
       () => MatchesScreen(),
       MatchesScreenBinding(),
+    ),
+    _createPage(
+      RouterName.age,
+      () => AgeScreen(),
+      AgeScreenBinding(),
+    ),
+    _createPage(
+      RouterName.likeToDate,
+      () => LikeToDateScreen(),
+      LikeToDateBinding(),
     ),
   ];
 
