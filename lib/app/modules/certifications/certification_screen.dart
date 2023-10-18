@@ -5,15 +5,15 @@ import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
-import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen_binding.dart';
+import 'package:soul_connect/app/modules/certifications/certification_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
 
-class LikeToDateScreen extends BaseView<LikeToDateScreenController> {
-  LikeToDateScreen({super.key});
+class CertificationScreen extends BaseView<CertificationScreenController> {
+  CertificationScreen({super.key});
 
   @override
   Widget vBuilder(BuildContext context, controller) {
@@ -21,8 +21,13 @@ class LikeToDateScreen extends BaseView<LikeToDateScreenController> {
       body: SafeArea(
         child: Column(
           children: [
-            const CustomAppBar(
-              text: "Who would you\nlike to date 👻",
+            CustomAppBar(
+              text: "What degrees or\ncertifications do\nyou hold ? 🎓",
+              showSkip: true,
+              skipOnTap: () {
+                FocusScope.of(context).unfocus();
+                // Get.toNamed(RouterName.homeTownScreen);
+              },
             ),
             SizedBox(
               height: 30.h,
@@ -40,7 +45,7 @@ class LikeToDateScreen extends BaseView<LikeToDateScreenController> {
               child: CustomElevatedButton(
                 onTap: () {
                   FocusScope.of(context).unfocus();
-                  Get.toNamed(RouterName.homeTownScreen);
+                  // Get.toNamed(RouterName.homeTownScreen);
                 },
                 text: "Next",
                 buttonStyle: CustomButtonStyles.none,
@@ -59,7 +64,7 @@ class LikeToDateScreen extends BaseView<LikeToDateScreenController> {
 }
 
 class BodyUi extends StatelessWidget {
-  final LikeToDateScreenController controller;
+  final CertificationScreenController controller;
 
   const BodyUi({
     super.key,

@@ -12,10 +12,14 @@ import 'package:soul_connect/app/modules/auth/signup/signup_screen.dart';
 import 'package:soul_connect/app/modules/auth/signup/signup_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen.dart';
 import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen_binding.dart';
+import 'package:soul_connect/app/modules/certifications/certification_screen.dart';
+import 'package:soul_connect/app/modules/certifications/certification_screen_binding.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
 import 'package:soul_connect/app/modules/home/home_screen.dart';
 import 'package:soul_connect/app/modules/home/home_screen_binding.dart';
+import 'package:soul_connect/app/modules/home_town/home_town_screen.dart';
+import 'package:soul_connect/app/modules/home_town/home_town_screen_binding.dart';
 import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen.dart';
 import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen_binding.dart';
 import 'package:soul_connect/app/modules/main/bindings/main_binding.dart';
@@ -33,6 +37,8 @@ import 'package:soul_connect/app/modules/sexual/sexual_screen_binding.dart';
 import 'package:soul_connect/app/modules/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:soul_connect/app/modules/work/work_screen.dart';
+import 'package:soul_connect/app/modules/work/work_screen_binding.dart';
 import 'package:soul_connect/app/modules/your_self/your_self_screen.dart';
 import 'package:soul_connect/app/modules/your_self/your_self_screen_binding.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
@@ -135,6 +141,21 @@ class AppPages {
       RouterName.likeToDate,
       () => LikeToDateScreen(),
       LikeToDateBinding(),
+    ),
+    _createPage(
+      RouterName.homeTownScreen,
+      () => HomeTownScreen(),
+      HomeTownScreenBinding(),
+    ),
+    _createPage(
+      RouterName.workScreen,
+      () => WorkScreen(),
+      WorkScreenBinding(),
+    ),
+    _createPage(
+      RouterName.certification,
+      () => CertificationScreen(),
+      CertificationBinding(),
     ),
   ];
 

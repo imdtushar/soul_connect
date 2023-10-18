@@ -1,20 +1,19 @@
 import 'package:soul_connect/app/core/base/base_controller.dart';
 import 'package:get/get.dart';
 
-class LikeToDateBinding implements Bindings {
+class CertificationBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => LikeToDateScreenController(), fenix: true);
+    Get.lazyPut(() => CertificationScreenController(), fenix: true);
   }
 }
 
-class LikeToDateScreenController extends BaseController {
+class CertificationScreenController extends BaseController {
   int selectedValue = 0;
   List likeData = [
-    "Men",
-    "Women",
-    "Non-binary people",
-    "Everyone",
+    "High School",
+    "Undergrad",
+    "Postgrad",
   ];
 
   void selectIndex(int index) {

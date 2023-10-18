@@ -13,6 +13,9 @@ class RouterName {
   static const String presentation = '/presentation';
   static const String age = '/age';
   static const String likeToDate = '/likeToDate';
+  static const String homeTownScreen = '/homeTownScreen';
+  static const String workScreen = '/workScreen';
+  static const String certification = '/certification';
 
   static const String home = '/home';
   static const String profile = '/profile';

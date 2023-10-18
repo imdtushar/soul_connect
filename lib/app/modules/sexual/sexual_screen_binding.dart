@@ -13,7 +13,7 @@ class SexualScreenBinding implements Bindings {
 
 class SexualScreenController extends BaseController {
 
-  int selectedValue = -1;
+  int selectedValue = 0;
 
   void selectIndex(int index) {
     selectedValue = index;
