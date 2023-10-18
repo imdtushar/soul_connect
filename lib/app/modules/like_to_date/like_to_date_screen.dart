@@ -79,7 +79,7 @@ class BodyUi extends StatelessWidget {
           height: 10.h,
         );
       },
-      itemCount: 4,
+      itemCount: controller.likeData.length,
       itemBuilder: (context, index) {
         return Container(
           width: double.infinity,
@@ -110,7 +110,7 @@ class BodyUi extends StatelessWidget {
                   : MainAxisAlignment.start,
               children: [
                 Text(
-                  'Men',
+                  "${controller.likeData[index]}",
                   style: poppinsRegular.copyWith(
                     fontSize: 15.sp,
                     color: controller.selectedValue == index

@@ -10,6 +10,12 @@ class LikeToDateBinding implements Bindings {
 
 class LikeToDateScreenController extends BaseController {
   int selectedValue = -1;
+  List likeData = [
+    "Men",
+    "Women",
+    "Non-binary people",
+    "Everyone",
+  ];
 
   void selectIndex(int index) {
     selectedValue = index;
