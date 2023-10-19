@@ -5,15 +5,15 @@ import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
-import 'package:soul_connect/app/modules/certifications/certification_screen_binding.dart';
+import 'package:soul_connect/app/modules/smoke/smoke_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
 
-class CertificationScreen extends BaseView<CertificationScreenController> {
-  CertificationScreen({super.key});
+class SmokeScreen extends BaseView<SmokeScreenController> {
+  SmokeScreen({super.key});
 
   @override
   Widget vBuilder(BuildContext context, controller) {
@@ -22,11 +22,11 @@ class CertificationScreen extends BaseView<CertificationScreenController> {
         child: Column(
           children: [
             CustomAppBar(
-              text: "What degrees or\ncertifications do\nyou hold ? 🎓",
+              text: "Do you Smoke? 🚬",
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
-                Get.toNamed(RouterName.religion);
+                Get.toNamed(RouterName.drink);
               },
             ),
             SizedBox(
@@ -45,7 +45,7 @@ class CertificationScreen extends BaseView<CertificationScreenController> {
               child: CustomElevatedButton(
                 onTap: () {
                   FocusScope.of(context).unfocus();
-                  Get.toNamed(RouterName.religion);
+                  Get.toNamed(RouterName.drink);
                 },
                 text: "Next",
                 buttonStyle: CustomButtonStyles.none,
@@ -64,7 +64,7 @@ class CertificationScreen extends BaseView<CertificationScreenController> {
 }
 
 class BodyUi extends StatelessWidget {
-  final CertificationScreenController controller;
+  final SmokeScreenController controller;
 
   const BodyUi({
     super.key,

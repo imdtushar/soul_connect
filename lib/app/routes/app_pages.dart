@@ -16,6 +16,8 @@ import 'package:soul_connect/app/modules/certifications/certification_screen.dar
 import 'package:soul_connect/app/modules/certifications/certification_screen_binding.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
+import 'package:soul_connect/app/modules/drink/drink_screen.dart';
+import 'package:soul_connect/app/modules/drink/drink_screen_binding.dart';
 import 'package:soul_connect/app/modules/home/home_screen.dart';
 import 'package:soul_connect/app/modules/home/home_screen_binding.dart';
 import 'package:soul_connect/app/modules/home_town/home_town_screen.dart';
@@ -32,13 +34,19 @@ import 'package:soul_connect/app/modules/profile/profile_screen.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/relationship/relationship_screen.dart';
 import 'package:soul_connect/app/modules/relationship/relationship_screen_binding.dart';
+import 'package:soul_connect/app/modules/religion/religion_screen.dart';
+import 'package:soul_connect/app/modules/religion/religion_screen_binding.dart';
 import 'package:soul_connect/app/modules/sexual/sexual_screen.dart';
 import 'package:soul_connect/app/modules/sexual/sexual_screen_binding.dart';
+import 'package:soul_connect/app/modules/smoke/smoke_screen.dart';
+import 'package:soul_connect/app/modules/smoke/smoke_screen_binding.dart';
 import 'package:soul_connect/app/modules/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/modules/work/work_screen.dart';
 import 'package:soul_connect/app/modules/work/work_screen_binding.dart';
+import 'package:soul_connect/app/modules/your_interests/your_interests_screen.dart';
+import 'package:soul_connect/app/modules/your_interests/your_interests_screen_binding.dart';
 import 'package:soul_connect/app/modules/your_self/your_self_screen.dart';
 import 'package:soul_connect/app/modules/your_self/your_self_screen_binding.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
@@ -156,6 +164,26 @@ class AppPages {
       RouterName.certification,
       () => CertificationScreen(),
       CertificationBinding(),
+    ),
+    _createPage(
+      RouterName.religion,
+      () => ReligionScreen(),
+      ReligionBinding(),
+    ),
+    _createPage(
+      RouterName.smoke,
+      () => SmokeScreen(),
+      SmokeBinding(),
+    ),
+    _createPage(
+      RouterName.drink,
+      () => DrinkScreen(),
+      DrinkBinding(),
+    ),
+    _createPage(
+      RouterName.yourInterest,
+      () => YourInterestScreen(),
+      YourInterestBinding(),
     ),
   ];
 

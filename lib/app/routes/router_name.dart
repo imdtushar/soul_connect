@@ -16,6 +16,10 @@ class RouterName {
   static const String homeTownScreen = '/homeTownScreen';
   static const String workScreen = '/workScreen';
   static const String certification = '/certification';
+  static const String religion = '/religion';
+  static const String smoke = '/smoke';
+  static const String drink = '/drink';
+  static const String yourInterest = '/yourInterest';
 
   static const String home = '/home';
   static const String profile = '/profile';

@@ -14,4 +14,5 @@ abstract class AppColors {
   static const Color shadow = Color(0x26000000);
   static const Color paragraphHint = Color(0xff707070);
   static const Color dividerColor = Color(0xffA9A9A9);
+  static const Color borderColor = Color(0xffE8E6EA);
 }
