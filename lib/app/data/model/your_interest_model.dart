@@ -1,7 +1,9 @@
+import 'package:get/get_rx/get_rx.dart';
+
 class YourInterestsModel {
   final String icon;
   final String text;
-  bool isSelected ;
+  RxBool isSelected = false.obs;
 
-  YourInterestsModel( {required this.isSelected,required this.icon, required this.text});
+  YourInterestsModel( { required this.icon, required this.text,  isSelected});
 }

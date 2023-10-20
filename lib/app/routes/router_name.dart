@@ -20,6 +20,8 @@ class RouterName {
   static const String smoke = '/smoke';
   static const String drink = '/drink';
   static const String yourInterest = '/yourInterest';
+  static const String gender = '/gender';
+  static const String location = '/location';
 
   static const String home = '/home';
   static const String profile = '/profile';

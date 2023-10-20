@@ -18,12 +18,16 @@ import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen_binding.dart';
+import 'package:soul_connect/app/modules/gender/gender_screen.dart';
+import 'package:soul_connect/app/modules/gender/gender_screen_binding.dart';
 import 'package:soul_connect/app/modules/home/home_screen.dart';
 import 'package:soul_connect/app/modules/home/home_screen_binding.dart';
 import 'package:soul_connect/app/modules/home_town/home_town_screen.dart';
 import 'package:soul_connect/app/modules/home_town/home_town_screen_binding.dart';
 import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen.dart';
 import 'package:soul_connect/app/modules/like_to_date/like_to_date_screen_binding.dart';
+import 'package:soul_connect/app/modules/location/location_screen.dart';
+import 'package:soul_connect/app/modules/location/location_screen_binding.dart';
 import 'package:soul_connect/app/modules/main/bindings/main_binding.dart';
 import 'package:soul_connect/app/modules/main/views/main_view.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen.dart';
@@ -184,6 +188,16 @@ class AppPages {
       RouterName.yourInterest,
       () => YourInterestScreen(),
       YourInterestBinding(),
+    ),
+    _createPage(
+      RouterName.gender,
+      () => GenderScreen(),
+      GenderBinding(),
+    ),
+    _createPage(
+      RouterName.location,
+      () => LocationScreen(),
+      LocationBinding(),
     ),
   ];
 

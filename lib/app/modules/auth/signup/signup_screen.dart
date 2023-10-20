@@ -112,6 +112,7 @@ class BodyPartOfUi extends StatelessWidget {
             ),
           ),
           CustomTextFormField(
+
             isPasswordField: false,
             controller: controller.emailController,
             hintText: "Email",

@@ -10,10 +10,8 @@ class YourInterestBinding implements Bindings {
 
 class YourInterestScreenController extends BaseController {
 
-  bool isSelected = false;
 
   List<Map<String, dynamic>> dataCollection = [];
-  List allData = [];
 
   @override
   void onInit() {
@@ -23,7 +21,6 @@ class YourInterestScreenController extends BaseController {
       update();
     });
   }
-
 
   Future<List<Map<String, dynamic>>?> fetchData() async {
     return [
