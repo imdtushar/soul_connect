@@ -26,41 +26,38 @@ class MobileLoginScreen extends BaseView<MobileLoginScreenController> {
   Widget vBuilder(BuildContext context, controller) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.gray100,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Container(
-                width: double.infinity,
-                color: AppColors.gray100,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20.w,
-                        vertical: 8.h,
-                      ),
-                      child: CustomImageView(
-                        svgPath: ImageConstant.backButton,
-                        onTap: () => Get.back(),
-                      ),
-                    ),
-                    SizedBox(height: height * 0.05),
-                    CustomImageView(
-                      svgPath: ImageConstant.mobileLoginBg,
-                      alignment: Alignment.center,
-                    ),
-                    SizedBox(height: height * 0.09),
-                    BodyPartOfUi(controller: controller),
-                  ],
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 8.h,
+                  ),
+                  child: CustomImageView(
+                    svgPath: ImageConstant.backButton,
+                    onTap: () => Get.back(),
+                  ),
                 ),
-              ),
-            )),
+                SizedBox(height: height * 0.05),
+                CustomImageView(
+                  svgPath: ImageConstant.mobileLoginBg,
+                  alignment: Alignment.center,
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: BodyPartOfUi(controller: controller),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -113,9 +110,7 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-
           CommonTextField(
-            label: 'Enter your mobile number',
             controller: controller.mobileNumberController,
             hintText: 'Enter your mobile number',
             isPasswordField: false,

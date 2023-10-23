@@ -47,4 +47,10 @@ class ImageConstant {
 
   //List Select Image Password Screen BG
   static String checkImg = '$imagePath/check_ic.svg';
+
+  // Image Location Icon
+  static String locationIc = '$imagePath/location_ic.svg';
+
+  //Image Search Icon
+  static String searchIc = '$imagePath/search_ic.svg';
 }

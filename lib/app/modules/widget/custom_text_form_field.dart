@@ -109,7 +109,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           autofocus: widget.autofocus!,
           inputFormatters: widget.inputFormatters,
           style: widget.textStyle ??
-              poppinsRegular.copyWith(
+              poppinsMediumItalic.copyWith(
                 fontSize: 14.sp,
                 color: AppColors.black,
               ),
@@ -125,7 +125,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   InputDecoration get decoration => InputDecoration(
         hintText: widget.hintText ?? "",
         hintStyle: widget.hintStyle ??
-            poppinsRegular.copyWith(
+            poppinsMediumItalic.copyWith(
               fontSize: 14.sp,
               color: AppColors.black.withOpacity(0.5),
             ),

@@ -54,32 +54,14 @@ class BodyUI extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 20.w,
-                  bottom: 4.h,
-                ),
-                child: Text(
-                  'Hometown',
-                  style: poppinsRegular.copyWith(
-                    fontSize: 14.sp,
-                    color: AppColors.black.withOpacity(0.5),
-                  ),
-                ),
-              ),
-              CustomTextFormField(
-                isPasswordField: false,
-                controller: controller.homeTownController,
-                hintText: "",
-                autofocus: false,
-                textInputType: TextInputType.text,
-              ),
-              SizedBox(height: 10.h),
-            ],
+          CustomTextFormField(
+            isPasswordField: false,
+            controller: controller.homeTownController,
+            hintText: "Hometown",
+            autofocus: false,
+            textInputType: TextInputType.text,
           ),
+          SizedBox(height: 10.h),
           SizedBox(height: 50.h),
           CustomElevatedButton(
             onTap: () {

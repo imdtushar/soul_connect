@@ -76,23 +76,10 @@ Widget buildTextFormField(String label, TextEditingController controller) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Padding(
-        padding: EdgeInsets.only(
-          left: 20.w,
-          bottom: 4.h,
-        ),
-        child: Text(
-          label,
-          style: poppinsRegular.copyWith(
-            fontSize: 14.sp,
-            color: AppColors.black.withOpacity(0.5),
-          ),
-        ),
-      ),
       CustomTextFormField(
         isPasswordField: false,
         controller: controller,
-        hintText: "",
+        hintText: label,
         autofocus: false,
         textInputType: TextInputType.text,
       ),

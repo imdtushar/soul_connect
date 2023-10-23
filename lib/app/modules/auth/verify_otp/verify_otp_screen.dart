@@ -16,48 +16,43 @@ import 'package:soul_connect/app/routes/router_name.dart';
 class VerifyOtpScreen extends BaseView<VerifyOtpScreenController> {
   VerifyOtpScreen({super.key});
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   @override
   Widget vBuilder(BuildContext context, controller) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.gray100,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Container(
-                width: double.infinity,
-                color: AppColors.gray100,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20.w,
-                        vertical: 8.h,
-                      ),
-                      child: CustomImageView(
-                        svgPath: ImageConstant.backButton,
-                        onTap: () => Get.back(),
-                      ),
-                    ),
-                    SizedBox(height: height * 0.06),
-                    CustomImageView(
-                      svgPath: ImageConstant.otpVerifyBg,
-                      alignment: Alignment.center,
-                      height: height * 0.32,
-                    ),
-                    SizedBox(height: height * 0.1),
-                    BodyPartOfUi(controller: controller),
-                  ],
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 8.h,
+                  ),
+                  child: CustomImageView(
+                    svgPath: ImageConstant.backButton,
+                    onTap: () => Get.back(),
+                  ),
                 ),
-              ),
-            )),
+                // SizedBox(height: height * 0.06),
+                CustomImageView(
+                  svgPath: ImageConstant.otpVerifyBg,
+                  alignment: Alignment.center,
+                  height: height * 0.32,
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: BodyPartOfUi(controller: controller),
+            ),
+          ],
+        ),
       ),
     );
   }

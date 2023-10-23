@@ -1,10 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:flutter/material.dart';
-import 'package:soul_connect/app/core/utils/validation_functions.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/login/login_screen_binding.dart';
@@ -13,42 +11,29 @@ import 'package:soul_connect/app/modules/widget/common_textfield.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
-import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
 import 'package:soul_connect/app/routes/router_name.dart';
 
 class LoginScreen extends BaseView<LoginScreenController> {
   LoginScreen({super.key});
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   @override
   Widget vBuilder(BuildContext context, controller) {
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.gray100,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Container(
+        child: Stack(
+          children: [
+            CustomImageView(
+              svgPath: ImageConstant.loginBgImg,
               width: double.infinity,
-              color: AppColors.gray100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(height: height * 0.02),
-                  CustomImageView(
-                    svgPath: ImageConstant.loginBgImg,
-                  ),
-                  SizedBox(height: height * 0.03),
-                  BodyPartOfUi(controller: controller),
-                ],
-              ),
+              height: 210.h,
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: BodyPartOfUi(controller: controller),
+            ),
+          ],
         ),
       ),
     );
@@ -116,7 +101,6 @@ class BodyPartOfUi extends StatelessWidget {
             height: 16.h,
           ),
           CommonTextField(
-            label: 'Email',
             controller: controller.emailController,
             hintText: 'Email',
             isPasswordField: false,
@@ -124,9 +108,9 @@ class BodyPartOfUi extends StatelessWidget {
             prefixWidth: 10.w,
             textInputType: TextInputType.emailAddress,
             returnMsg: 'Please enter valid email',
+            textInputAction: TextInputAction.next,
           ),
           CommonTextField(
-            label: 'Password',
             controller: controller.passwordController,
             hintText: 'Password',
             isPasswordField: true,
@@ -134,6 +118,7 @@ class BodyPartOfUi extends StatelessWidget {
             prefixHeight: 8.h,
             textInputType: TextInputType.visiblePassword,
             returnMsg: 'Please enter valid password',
+            textInputAction: TextInputAction.done,
           ),
           SizedBox(height: 20.h),
           CustomElevatedButton(

@@ -7,7 +7,7 @@ import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
 
 class CommonTextField extends StatelessWidget {
-  final String label;
+
   final TextEditingController controller;
   final String? hintText;
   final bool isPasswordField;
@@ -23,7 +23,6 @@ class CommonTextField extends StatelessWidget {
 
   const CommonTextField({
     super.key,
-    required this.label,
     required this.controller,
     this.hintText,
     required this.isPasswordField,
@@ -43,19 +42,6 @@ class CommonTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsets.only(
-            left: 20.w,
-            bottom: 4.h,
-          ),
-          child: Text(
-            label,
-            style: poppinsRegular.copyWith(
-              fontSize: 14.sp,
-              color: AppColors.black.withOpacity(0.5),
-            ),
-          ),
-        ),
         CustomTextFormField(
           isPasswordField: isPasswordField,
           controller: controller,

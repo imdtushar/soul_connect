@@ -16,47 +16,42 @@ import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
 class SignupScreen extends BaseView<SignupScreenController> {
   SignupScreen({super.key});
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   @override
   Widget vBuilder(BuildContext context, controller) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.gray100,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Container(
-                width: double.infinity,
-                color: AppColors.gray100,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20.w,
-                        vertical: 8.h,
-                      ),
-                      child: CustomImageView(
-                        svgPath: ImageConstant.backButton,
-                        onTap: () => Get.back(),
-                      ),
-                    ),
-                    SizedBox(height: height * 0.01),
-                    CustomImageView(
-                      svgPath: ImageConstant.signupBg,
-                      alignment: Alignment.center,
-                    ),
-                    SizedBox(height: height * 0.034),
-                    BodyPartOfUi(controller: controller),
-                  ],
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 8.h,
+                  ),
+                  child: CustomImageView(
+                    svgPath: ImageConstant.backButton,
+                    onTap: () => Get.back(),
+                  ),
                 ),
-              ),
-            )),
+                SizedBox(height: height * 0.01),
+                CustomImageView(
+                  svgPath: ImageConstant.signupBg,
+                  alignment: Alignment.center,
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: BodyPartOfUi(controller: controller),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -98,21 +93,7 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Email',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
           CustomTextFormField(
-
             isPasswordField: false,
             controller: controller.emailController,
             hintText: "Email",
@@ -122,6 +103,7 @@ class BodyPartOfUi extends StatelessWidget {
               width: 10.w,
             ),
             textInputType: TextInputType.emailAddress,
+            textInputAction: TextInputAction.next,
             validator: (value) {
               if (value == null || (!isValidEmail(value, isRequired: true))) {
                 return "Please enter valid email";
@@ -130,19 +112,6 @@ class BodyPartOfUi extends StatelessWidget {
             },
           ),
           SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Password',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
           CustomTextFormField(
             isPasswordField: true,
             autofocus: false,
@@ -163,19 +132,6 @@ class BodyPartOfUi extends StatelessWidget {
             },
           ),
           SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 14.w,
-              bottom: 4.h,
-            ),
-            child: Text(
-              'Confirm Password',
-              style: poppinsRegular.copyWith(
-                fontSize: 14.sp,
-                color: AppColors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
           CustomTextFormField(
             isPasswordField: true,
             controller: controller.confirmPasswordController,
