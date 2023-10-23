@@ -5,6 +5,7 @@ import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/utils/validation_functions.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
@@ -17,7 +18,6 @@ import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
 class NewPasswordScreen extends BaseView<NewPasswordScreenController> {
   NewPasswordScreen({super.key});
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget vBuilder(BuildContext context, controller) {
@@ -87,7 +87,7 @@ class BodyPartOfUi extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              'Create a new password',
+              AppString.createPassLbl,
               style: poppinsSemiBold.copyWith(
                 fontSize: 25.sp,
                 color: AppColors.black,
@@ -99,7 +99,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           CommonTextField(
             controller: controller.passwordController,
-            hintText: 'Create Password',
+            hintText: AppString.createPassHint,
             isPasswordField: true,
             prefixImage: ImageConstant.passwordIcTextField,
             prefixHeight: 4.h,
@@ -110,7 +110,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           CommonTextField(
             controller: controller.confirmPasswordController,
-            hintText: 'Confirm Password',
+            hintText: AppString.confirmPassHint,
             isPasswordField: true,
             prefixImage: ImageConstant.passwordIcTextField,
             prefixHeight: 4.h,
@@ -122,7 +122,7 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(height: 10.h),
           CustomElevatedButton(
             onTap: () {},
-            text: "Next",
+            text: AppString.nextBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(

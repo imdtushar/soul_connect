@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/data/model/relationship_model.dart';
 import 'package:soul_connect/app/modules/relationship/relationship_screen_binding.dart';
@@ -21,7 +22,7 @@ class RelationShipScreen extends BaseView<RelationShipScreenController> {
         child: Column(
           children: [
             const CustomAppBar(
-              text: "What type of\nrelationship are you\nlooking for?",
+              text: AppString.relationShipLbl,
             ),
             SizedBox(
               height: 15.h,
@@ -39,7 +40,7 @@ class RelationShipScreen extends BaseView<RelationShipScreenController> {
                   FocusScope.of(context).unfocus();
                   Get.toNamed(RouterName.presentation);
                 },
-                text: "Next",
+                text: AppString.nextBtn ,
                 buttonStyle: CustomButtonStyles.none,
                 decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
                 buttonTextStyle: poppinsMedium.copyWith(

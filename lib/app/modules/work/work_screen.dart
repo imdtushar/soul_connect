@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
@@ -21,7 +22,7 @@ class WorkScreen extends BaseView<WorkScreenController> {
         child: Column(
           children: [
              CustomAppBar(
-              text: "Where do\nyou work? 👔",
+              text: AppString.workLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
@@ -56,7 +57,7 @@ class BodyUI extends StatelessWidget {
           CustomTextFormField(
             isPasswordField: false,
             controller: controller.workPlaceController,
-            hintText: "Workplace",
+            hintText: AppString.workplace,
             autofocus: false,
             textInputType: TextInputType.text,
           ),
@@ -67,7 +68,7 @@ class BodyUI extends StatelessWidget {
               FocusScope.of(context).unfocus();
               Get.toNamed(RouterName.certification);
             },
-            text: "Next",
+            text: AppString.nextBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(

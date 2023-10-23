@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
@@ -21,7 +22,7 @@ class YourSelfScreen extends BaseView<YourSelfScreenController> {
         child: Column(
           children: [
             const CustomAppBar(
-              text: "Introduce\nyourself 👋",
+              text: AppString.introduceLbl,
             ),
             BodyUI(controller: controller),
           ],
@@ -50,15 +51,15 @@ class BodyUI extends StatelessWidget {
             height: 30.h,
           ),
           // Usage in the BodyUI widget
-          buildTextFormField('First Name', controller.firstNameController),
-          buildTextFormField('Last Name', controller.lastNameController),
+          buildTextFormField(AppString.firstNameHint, controller.firstNameController),
+          buildTextFormField(AppString.lastNameHint, controller.lastNameController),
           SizedBox(height: 50.h),
           CustomElevatedButton(
             onTap: () {
               FocusScope.of(context).unfocus();
               Get.toNamed(RouterName.sexualScreen);
             },
-            text: "Next",
+            text: AppString.nextBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(

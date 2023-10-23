@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/home_town/home_town_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -21,7 +22,7 @@ class HomeTownScreen extends BaseView<HomeTownScreenController> {
         child: Column(
           children: [
             CustomAppBar(
-              text: "Where’s your\nhometown 🏡",
+              text: AppString.homeTownLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
@@ -57,7 +58,7 @@ class BodyUI extends StatelessWidget {
           CustomTextFormField(
             isPasswordField: false,
             controller: controller.homeTownController,
-            hintText: "Hometown",
+            hintText: AppString.homeTownHint,
             autofocus: false,
             textInputType: TextInputType.text,
           ),
@@ -68,7 +69,7 @@ class BodyUI extends StatelessWidget {
               FocusScope.of(context).unfocus();
               Get.toNamed(RouterName.workScreen);
             },
-            text: "Next",
+            text: AppString.nextBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(

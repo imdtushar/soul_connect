@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
@@ -83,7 +84,7 @@ class BodyPartOfUi extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              'Verify OTP',
+              AppString.verifyOtpLbl,
               style: poppinsSemiBold.copyWith(
                 fontSize: 25.sp,
                 color: AppColors.black,
@@ -104,7 +105,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "Didn’t get OTP yet?",
+              AppString.notGetOtp,
               style: poppinsRegular.copyWith(
                 fontSize: 12.sp,
                 color: AppColors.paragraphHint,
@@ -113,7 +114,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "Send again",
+              AppString.sendAgainBtn,
               style: poppinsMedium.copyWith(
                 fontSize: 15.sp,
                 color: AppColors.black,
@@ -125,7 +126,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           CustomElevatedButton(
             onTap: () => Get.toNamed(RouterName.newPassword),
-            text: "Verify",
+            text: AppString.verifyBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(

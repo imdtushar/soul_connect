@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/presentation/presentation_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -21,7 +22,7 @@ class PresentationScreen extends BaseView<PresentationScreenController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomAppBar(
-              text: "It’s all about\nPresentation 📸",
+              text: AppString.presentationLbl,
             ),
             SizedBox(
               height: 15.h,
@@ -29,7 +30,7 @@ class PresentationScreen extends BaseView<PresentationScreenController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
-                "• Upload at least 6 photos",
+                AppString.uploadPhotoWarning,
                 style: poppinsMedium.copyWith(
                   fontSize: 14.sp,
                   color: AppColors.black,
@@ -53,7 +54,7 @@ class PresentationScreen extends BaseView<PresentationScreenController> {
                   FocusScope.of(context).unfocus();
                   Get.toNamed(RouterName.age);
                 },
-                text: "Next",
+                text: AppString.nextBtn,
                 buttonStyle: CustomButtonStyles.none,
                 decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
                 buttonTextStyle: poppinsMedium.copyWith(

@@ -5,6 +5,7 @@ import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/utils/validation_functions.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/signup/signup_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
@@ -83,7 +84,7 @@ class BodyPartOfUi extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              'Sign Up',
+              AppString.signupLbl,
               style: poppinsSemiBold.copyWith(
                 fontSize: 25.sp,
                 color: AppColors.black,
@@ -96,7 +97,7 @@ class BodyPartOfUi extends StatelessWidget {
           CustomTextFormField(
             isPasswordField: false,
             controller: controller.emailController,
-            hintText: "Email",
+            hintText: AppString.emailHint,
             autofocus: false,
             prefix: Image.asset(
               ImageConstant.emailIcTextField,
@@ -116,7 +117,7 @@ class BodyPartOfUi extends StatelessWidget {
             isPasswordField: true,
             autofocus: false,
             controller: controller.passwordController,
-            hintText: "Password",
+            hintText: AppString.passHint,
             prefix: Image.asset(
               ImageConstant.passwordIcTextField,
               height: 8.h,
@@ -135,7 +136,7 @@ class BodyPartOfUi extends StatelessWidget {
           CustomTextFormField(
             isPasswordField: true,
             controller: controller.confirmPasswordController,
-            hintText: 'Confirm Password',
+            hintText: AppString.confirmPassHint,
             prefix: Image.asset(
               ImageConstant.passwordIcTextField,
               height: 8.h,
@@ -154,7 +155,7 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(height: 20.h),
           CustomElevatedButton(
             onTap: () {},
-            text: "Next",
+            text: AppString.nextBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(
@@ -171,7 +172,7 @@ class BodyPartOfUi extends StatelessWidget {
                 Get.back();
               },
               child: Text(
-                'Having trouble signing in?',
+                AppString.signInBtl,
                 style: poppinsRegular.copyWith(
                   fontSize: 12.sp,
                   color: AppColors.black,

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/forgot_password/forgot_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
@@ -13,8 +14,8 @@ import 'package:soul_connect/app/modules/widget/common_textfield.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
+import 'package:soul_connect/app/routes/router_name.dart';
 
-import '../../../routes/router_name.dart';
 
 class ForgotPassScreen extends BaseView<ForgotPassScreenController> {
   ForgotPassScreen({super.key});
@@ -85,7 +86,7 @@ class BodyPartOfUi extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              'Forgot Password?',
+              AppString.forgotPassLbl,
               style: poppinsSemiBold.copyWith(
                 fontSize: 25.sp,
                 color: AppColors.black,
@@ -98,7 +99,7 @@ class BodyPartOfUi extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
-              'OTP will be sent to your registered Email id or Mobile number',
+              AppString.paragraphForgotPass,
               style: poppinsRegular.copyWith(
                 fontSize: 12.sp,
                 color: AppColors.paragraphHint,
@@ -111,7 +112,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           CommonTextField(
             controller: controller.mobileNumberController,
-            hintText: 'Enter your mobile number',
+            hintText: AppString.enterMobileNumber,
             isPasswordField: false,
             prefixIsImage: false,
             prefix: CountryCodePicker(
@@ -142,7 +143,7 @@ class BodyPartOfUi extends StatelessWidget {
             onTap: () {
               Get.toNamed(RouterName.verifyOtp);
             },
-            text: "Next",
+            text: AppString.nextBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(

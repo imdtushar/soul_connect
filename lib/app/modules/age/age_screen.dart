@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/age/age_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -20,7 +21,7 @@ class AgeScreen extends BaseView<AgeScreenController> {
       body: SafeArea(
         child: Column(children: [
           const CustomAppBar(
-            text: "What’s your\ndate of birth? 🎂",
+            text: AppString.yourBirthDateLbl,
           ),
           SizedBox(
             height: 15.h,
@@ -59,7 +60,7 @@ class AgeScreen extends BaseView<AgeScreenController> {
             ),
           ),
           Text(
-            "This can’t be changed later",
+            AppString.changeLater,
             style: poppinsMedium.copyWith(
               fontSize: 10.sp,
               color: AppColors.black.withOpacity(0.5),
@@ -77,7 +78,7 @@ class AgeScreen extends BaseView<AgeScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.likeToDate);
               },
-              text: "Next",
+              text: AppString.nextBtn,
               buttonStyle: CustomButtonStyles.none,
               decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
               buttonTextStyle: poppinsMedium.copyWith(

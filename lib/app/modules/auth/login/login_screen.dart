@@ -4,6 +4,7 @@ import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/auth/login/login_screen_binding.dart';
 import 'package:soul_connect/app/modules/theme/app_decoration.dart';
@@ -67,7 +68,7 @@ class BodyPartOfUi extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
-              "Welcome ! Please log in to continue your dating journey.",
+              AppString.welcome,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
@@ -82,7 +83,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           Center(
             child: Text(
-              'Sign up or Log In',
+              AppString.signupLogin ,
               style: poppinsSemiBold.copyWith(
                 fontSize: 25.sp,
                 color: AppColors.black,
@@ -102,7 +103,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           CommonTextField(
             controller: controller.emailController,
-            hintText: 'Email',
+            hintText: AppString.emailHint,
             isPasswordField: false,
             prefixImage: ImageConstant.emailIcTextField,
             prefixWidth: 10.w,
@@ -112,7 +113,7 @@ class BodyPartOfUi extends StatelessWidget {
           ),
           CommonTextField(
             controller: controller.passwordController,
-            hintText: 'Password',
+            hintText: AppString.passHint,
             isPasswordField: true,
             prefixImage: ImageConstant.passwordIcTextField,
             prefixHeight: 8.h,
@@ -126,7 +127,7 @@ class BodyPartOfUi extends StatelessWidget {
               FocusScope.of(context).unfocus();
               Get.toNamed(RouterName.yourSelf);
             },
-            text: "Continue with email",
+            text: AppString.continueBtn,
             buttonStyle: CustomButtonStyles.none,
             decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
             buttonTextStyle: poppinsMedium.copyWith(
@@ -146,7 +147,7 @@ class BodyPartOfUi extends StatelessWidget {
                   Get.toNamed(RouterName.forgotPassword);
                 },
                 child: Text(
-                  'Forgot Password?',
+                  AppString.forgotPassBtn,
                   style: poppinsRegular.copyWith(
                     fontSize: 12.sp,
                     color: AppColors.black,
@@ -162,7 +163,7 @@ class BodyPartOfUi extends StatelessWidget {
                   Get.toNamed(RouterName.signup);
                 },
                 child: Text(
-                  'Sign up?',
+                  AppString.signUpBtn,
                   style: poppinsRegular.copyWith(
                     fontSize: 12.sp,
                     color: AppColors.black,
