@@ -1,7 +1,5 @@
 import 'package:soul_connect/app/core/values/app_colors.dart';
-import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen.dart';
-import 'package:soul_connect/app/modules/main/views/bottom_lib.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen.dart';
 import 'package:soul_connect/app/modules/other_view/other_view.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen.dart';
@@ -56,124 +54,78 @@ class MainView extends BaseView<MainController> {
   }
 
   Widget buildMyNavBar(BuildContext context) {
-    return SalomonBottomBar(
-        selectedItemColor: AppColors.white,
-        unselectedItemColor: AppColors.black,
-        backgroundColor: AppColors.white,
-        currentIndex: controller.navController.selectedIndex,
-        selectedColorOpacity: 1,
-        onTap: (index) {
-          controller.navController.updateSelectedIndex(index);
-          controller.navController.pageController.jumpToPage(index);
+    return BottomNavigationBar(
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/images/home_icon.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+          label: '',
+          activeIcon: Image.asset(
+            "assets/images/home_icon_active.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/images/matches_icon.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+          label: '',
+          activeIcon: Image.asset(
+            "assets/images/matches_icon.png",
+            color: AppColors.gradientStart,
+            height: 20.w,
+            width: 20.w,
+          ),
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/images/chat_ic.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+          label: '',
+          activeIcon: Image.asset(
+            "assets/images/chat_ic_active.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/images/Profile_ic.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+          label: '',
+          activeIcon: Image.asset(
+            "assets/images/Profile_ic_active.png",
+            height: 20.w,
+            width: 20.w,
+          ),
+        ),
+      ],
+      selectedFontSize: 0,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      unselectedFontSize: 0,
+      type: BottomNavigationBarType.fixed,
+      currentIndex: controller.navController.selectedIndex,
+      backgroundColor: AppColors.white,
+      unselectedItemColor: AppColors.unSelectedBottomItem,
+      elevation: 0,
+      onTap: (index) {
+        controller.navController.updateSelectedIndex(index);
+        controller.navController.pageController.jumpToPage(index);
 
-          controller.update();
-        },
-        items: [
-          SalomonBottomBarItem(
-            activeIcon: Image.asset(
-              "assets/images/home_icon.png",
-              color: AppColors.white,
-              height: 20.w,
-              width: 20.w,
-            ),
-            icon: Image.asset(
-              "assets/images/home_icon.png",
-              color: AppColors.black,
-              height: 20.w,
-              width: 20.w,
-            ),
-            title: Text(
-              'Home',
-              style: poppinsSemiBold.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.white,
-              ),
-            ),
-            selectedColor:AppColors.black,
-          ),
-          SalomonBottomBarItem(
-            activeIcon: Image.asset(
-              "assets/images/wishList_ic.png",
-              color: AppColors.white,
-              height: 20.w,
-              width: 20.w,
-            ),
-            icon: Image.asset(
-              "assets/images/wishList_ic.png",
-              color: AppColors.black,
-              height: 20.w,
-              width: 20.w,
-            ),
-            title: Text(
-              'WishList',
-              style: poppinsSemiBold.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.white,
-              ),
-            ),
-            selectedColor: AppColors.black,
-          ),
-          SalomonBottomBarItem(
-            icon: Container(
-              height: 45.w,
-              width: 45.w,
-              decoration: const BoxDecoration(
-                color: AppColors.black,
-                shape: BoxShape.circle,
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.add,
-                  color: AppColors.white,
-                ),
-              ),
-            ),
-          ),
-          SalomonBottomBarItem(
-            activeIcon: Image.asset(
-              "assets/images/chat_ic.png",
-              color: AppColors.white,
-              height: 20.w,
-              width: 20.w,
-            ),
-            icon: Image.asset(
-              "assets/images/chat_ic.png",
-              color: AppColors.black,
-              height: 20.w,
-              width: 20.w,
-            ),
-            title: Text(
-              'Chats',
-              style: poppinsSemiBold.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.white,
-              ),
-            ),
-            selectedColor: AppColors.black,
-          ),
-          SalomonBottomBarItem(
-            activeIcon: Image.asset(
-              "assets/images/Profile_ic.png",
-              color: AppColors.white,
-              height: 20.w,
-              width: 20.w,
-            ),
-            icon: Image.asset(
-              "assets/images/Profile_ic.png",
-              color: AppColors.black,
-              height: 20.w,
-              width: 20.w,
-            ),
-            title: Text(
-              'Account',
-              style: poppinsSemiBold.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.white,
-              ),
-            ),
-            selectedColor: AppColors.black,
-          ),
-        ]);
+        controller.update();
+      },
+    );
   }
 }
 

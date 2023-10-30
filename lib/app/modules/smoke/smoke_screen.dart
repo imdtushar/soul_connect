@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/smoke/smoke_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -22,7 +23,7 @@ class SmokeScreen extends BaseView<SmokeScreenController> {
         child: Column(
           children: [
             CustomAppBar(
-              text: "Do you Smoke? 🚬",
+              text: AppString.smokeLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
@@ -47,7 +48,7 @@ class SmokeScreen extends BaseView<SmokeScreenController> {
                   FocusScope.of(context).unfocus();
                   Get.toNamed(RouterName.drink);
                 },
-                text: "Next",
+                text: AppString.nextBtn,
                 buttonStyle: CustomButtonStyles.none,
                 decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
                 buttonTextStyle: poppinsMedium.copyWith(

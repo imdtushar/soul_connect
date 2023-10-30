@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -22,7 +23,7 @@ class DrinkScreen extends BaseView<DrinkScreenController> {
         child: Column(
           children: [
             CustomAppBar(
-              text: "Do you Drink? 🍺",
+              text: AppString.drinkLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
@@ -47,7 +48,7 @@ class DrinkScreen extends BaseView<DrinkScreenController> {
                   FocusScope.of(context).unfocus();
                   Get.toNamed(RouterName.yourInterest);
                 },
-                text: "Next",
+                text: AppString.nextBtn,
                 buttonStyle: CustomButtonStyles.none,
                 decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
                 buttonTextStyle: poppinsMedium.copyWith(

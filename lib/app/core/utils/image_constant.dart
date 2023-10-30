@@ -53,4 +53,31 @@ class ImageConstant {
 
   //Image Search Icon
   static String searchIc = '$imagePath/search_ic.svg';
+
+  //soul Connect Icon
+  static String soulConnectLogo = '$imagePath/soulConnect_logo.svg';
+
+  //Home Filter Icon
+  static String filterHome = '$imagePath/Filter.svg';
+
+  //Notification Icon
+  static String notificationIcon = '$imagePath/notification.svg';
+
+  //Search  Icon
+  static String searchIconHome = '$imagePath/search.svg';
+
+  //Like Button  Icon
+  static String likeBtn = '$imagePath/like.svg';
+
+  //Love Button  Icon
+  static String loveBtn = '$imagePath/love.svg';
+
+  //DisLike Button  Icon
+  static String disLikeBtn = '$imagePath/dislike.svg';
+
+  //Info Button  Icon
+  static String infoBtn = '$imagePath/info.svg';
+
+  //Verify  Icon
+  static String verifyIcon = '$imagePath/verified_icon.svg';
 }

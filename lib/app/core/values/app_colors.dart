@@ -15,4 +15,6 @@ abstract class AppColors {
   static const Color paragraphHint = Color(0xff707070);
   static const Color dividerColor = Color(0xffA9A9A9);
   static const Color borderColor = Color(0xffE8E6EA);
+  static const Color bottomBg = Color(0xffF1F5F9);
+  static const Color unSelectedBottomItem = Color(0xffADAFBB);
 }

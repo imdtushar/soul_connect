@@ -73,5 +73,30 @@ abstract class AppString {
       "What degrees or\ncertifications do\nyou hold ? 🎓";
 
   // Religion
+  static const String religionLbl = "What are your\nreligion beliefs?";
+
+  // Smoke
+  static const String smokeLbl = "Do you Smoke? 🚬";
+
+  // Drink
+  static const String drinkLbl = "Do you Drink? 🍺";
+
+  // Interests
+  static const String interestLbl = "Your Interests 🤔";
+  static const String interestParagraph =
+      "Select a few of your interests and let everyone know what you’re passionate about.";
+  static const String continueButton = "Continue";
+
+  // Gender
+  static const String genderLbl = "What’s your\nGender?";
+  static const String other = "Other";
+
+  // Location
+  static const String locationLbl = "Location📍";
+  static const String locationParagraph =
+      "Let the app locate you to provide best searched results around you";
+  static const String currentLocation = "Current Location";
+  static const String locationHint = "Location";
+  static const String searchLocationHint = "Search New Location";
 
 }

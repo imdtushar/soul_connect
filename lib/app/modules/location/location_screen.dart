@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/location/location_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
 import 'package:soul_connect/app/modules/widget/custom_button_style.dart';
 import 'package:soul_connect/app/modules/widget/custom_elevated_button.dart';
 import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
+import 'package:soul_connect/app/routes/router_name.dart';
 
 class LocationScreen extends BaseView<LocationScreenController> {
   LocationScreen({super.key});
@@ -22,11 +25,11 @@ class LocationScreen extends BaseView<LocationScreenController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomAppBar(
-              text: "Location📍",
+              text: AppString.locationLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
-                // Get.toNamed(RouterName.drink);
+                Get.toNamed(RouterName.main);
               },
             ),
             SizedBox(
@@ -35,7 +38,7 @@ class LocationScreen extends BaseView<LocationScreenController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
-                "Let the app locate you to provide best searched results around you",
+                AppString.locationParagraph,
                 style: poppinsRegular.copyWith(
                   fontSize: 17.sp,
                   color: AppColors.black.withOpacity(0.7),
@@ -48,7 +51,7 @@ class LocationScreen extends BaseView<LocationScreenController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
-                "Current Location",
+                AppString.currentLocation,
                 style: poppinsMedium.copyWith(
                   fontSize: 18.sp,
                   color: AppColors.black,
@@ -63,7 +66,7 @@ class LocationScreen extends BaseView<LocationScreenController> {
               child: CustomTextFormField(
                 isPasswordField: false,
                 controller: controller.location,
-                hintText: "Location",
+                hintText: AppString.locationHint,
                 autofocus: false,
                 textInputType: TextInputType.text,
                 suffix: SvgPicture.asset(
@@ -80,7 +83,7 @@ class LocationScreen extends BaseView<LocationScreenController> {
               child: CustomTextFormField(
                 isPasswordField: false,
                 controller: controller.newLocation,
-                hintText: "Search New Location",
+                hintText: AppString.searchLocationHint,
                 autofocus: false,
                 textInputType: TextInputType.text,
                 suffix: SvgPicture.asset(
@@ -97,9 +100,9 @@ class LocationScreen extends BaseView<LocationScreenController> {
               child: CustomElevatedButton(
                 onTap: () {
                   FocusScope.of(context).unfocus();
-                  // Get.toNamed(RouterName.workScreen);
+                  Get.toNamed(RouterName.main);
                 },
-                text: "Next",
+                text: AppString.nextBtn,
                 buttonStyle: CustomButtonStyles.none,
                 decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
                 buttonTextStyle: poppinsMedium.copyWith(

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/gender/gender_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -20,7 +21,7 @@ class GenderScreen extends BaseView<GenderScreenController> {
         child: Column(
           children: [
             CustomAppBar(
-              text: "What’s your\nGender? ",
+              text: AppString.genderLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
@@ -44,7 +45,7 @@ class GenderScreen extends BaseView<GenderScreenController> {
             TextButton(
               onPressed: () {},
               child: Text(
-                "Other",
+                AppString.other,
                 style: poppinsMedium.copyWith(
                   fontSize: 18.sp,
                   color: AppColors.black,
@@ -64,7 +65,7 @@ class GenderScreen extends BaseView<GenderScreenController> {
                   FocusScope.of(context).unfocus();
                   Get.toNamed(RouterName.location);
                 },
-                text: "Next",
+                text: AppString.nextBtn,
                 buttonStyle: CustomButtonStyles.none,
                 decoration:
                 CustomButtonStyles.gradientOnErrorToPinkDecoration,

@@ -65,6 +65,8 @@ class CustomImageView extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: _buildCircleImage(),
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
       ),
     );
   }

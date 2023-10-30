@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
+import 'package:soul_connect/app/core/values/app_string.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/data/model/your_interest_model.dart';
 import 'package:soul_connect/app/modules/widget/custom_app_bar.dart';
@@ -21,7 +22,7 @@ class YourInterestScreen extends BaseView<YourInterestScreenController> {
         child: Column(
           children: [
             CustomAppBar(
-              text: "Your Interests 🤔",
+              text: AppString.interestLbl,
               showSkip: true,
               skipOnTap: () {
                 FocusScope.of(context).unfocus();
@@ -34,7 +35,7 @@ class YourInterestScreen extends BaseView<YourInterestScreenController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
-                "Select a few of your interests and let everyone know what you’re passionate about.",
+                AppString.interestParagraph,
                 style: poppinsRegular.copyWith(
                   fontSize: 16.sp,
                   color: AppColors.black.withOpacity(0.5),
@@ -130,7 +131,7 @@ class YourInterestScreen extends BaseView<YourInterestScreenController> {
                   FocusScope.of(context).unfocus();
                   Get.toNamed(RouterName.gender);
                 },
-                text: "Continue",
+                text: AppString.continueButton,
                 buttonStyle: CustomButtonStyles.none,
                 decoration: CustomButtonStyles.gradientOnErrorToPinkDecoration,
                 buttonTextStyle: poppinsMedium.copyWith(
