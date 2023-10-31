@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -62,7 +63,7 @@ class HomeScreen extends BaseView<HomeScreenController> {
                 onSwipe: controller.onSwipe,
                 onUndo: controller.onUndo,
                 numberOfCardsDisplayed: 3,
-                // backCardOffset: Offset(0, 0),
+                backCardOffset: const Offset(0, 0),
                 cardBuilder: (
                   context,
                   index,
@@ -73,7 +74,7 @@ class HomeScreen extends BaseView<HomeScreenController> {
               ),
             ),
             SizedBox(
-              height: 38.h,
+              height: 10.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -132,115 +133,138 @@ class ExampleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          height: 512.h,
-          decoration: ShapeDecoration(
-            color: Colors.greenAccent,
-            image: const DecorationImage(
-              image: NetworkImage(
-                  "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-              fit: BoxFit.cover,
-            ),
-            shape: RoundedRectangleBorder(
-              side: BorderSide(
-                width: 4,
-                strokeAlign: BorderSide.strokeAlignOutside,
-                color: Colors.white.withOpacity(0.5),
-              ),
-              borderRadius: BorderRadius.circular(28),
-            ),
-            shadows: const [
-              BoxShadow(
-                color: Color(0x33302756),
-                blurRadius: 30,
-                offset: Offset(6, 10),
-                spreadRadius: 0,
-              )
-            ],
+        CarouselSlider(
+          disableGesture: false,
+          options: CarouselOptions(
+            scrollPhysics: const NeverScrollableScrollPhysics(),
+            height: 512.h,
+            autoPlay: true,
+            viewportFraction: 1,
+            autoPlayCurve: Curves.decelerate,
           ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 200.h,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(28),
-                  bottomLeft: Radius.circular(28)),
-              gradient: LinearGradient(
-                begin: const Alignment(0.00, -1.00),
-                end: const Alignment(0, 1),
-                colors: [
-                  const Color(0x00110030),
-                  Colors.black.withOpacity(0.9),
-                ],
-              ),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 78.w,
-                        width: 78.w,
-                        padding: EdgeInsets.all(3.r),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: AppColors.bgColor,
+          items: [1, 2, 3, 4, 5].map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Stack(
+                  children: [
+                    Container(
+                      decoration: ShapeDecoration(
+                        color: Colors.greenAccent,
+                        image: const DecorationImage(
+                          image: NetworkImage(
+                              "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                          fit: BoxFit.cover,
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Image.network(
-                            "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            height: 78.w,
-                            width: 78.w,
-                            fit: BoxFit.cover,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 4,
+                            strokeAlign: BorderSide.strokeAlignOutside,
+                            color: Colors.white.withOpacity(0.5),
                           ),
+                          borderRadius: BorderRadius.circular(28),
                         ),
-                      ),
-                      SizedBox(
-                        width: 16.w,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                "Bhedu 22",
-                                style: poppinsSemiBold.copyWith(
-                                  fontSize: 24.sp,
-                                  color: AppColors.white,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8.w,
-                              ),
-                              SvgPicture.asset(ImageConstant.verifyIcon),
-                            ],
-                          ),
-                          Text(
-                            "1.5 Km away",
-                            style: poppinsRegular.copyWith(
-                              fontSize: 16.sp,
-                              color: AppColors.bgColor,
-                            ),
+                        shadows: const [
+                          BoxShadow(
+                            color: Color(0x33302756),
+                            blurRadius: 30,
+                            offset: Offset(6, 10),
+                            spreadRadius: 0,
                           )
                         ],
                       ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-              ],
-            ),
-          ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        height: 200.h,
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.only(
+                              bottomRight: Radius.circular(28),
+                              bottomLeft: Radius.circular(28)),
+                          gradient: LinearGradient(
+                            begin: const Alignment(0.00, -1.00),
+                            end: const Alignment(0, 1),
+                            colors: [
+                              const Color(0x00110030),
+                              Colors.black.withOpacity(0.9),
+                            ],
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: 78.w,
+                                    width: 78.w,
+                                    padding: EdgeInsets.all(3.r),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color: AppColors.bgColor,
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(100),
+                                      child: Image.network(
+                                        "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                        height: 78.w,
+                                        width: 78.w,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 16.w,
+                                  ),
+                                  Flexible(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "Jay 22",
+                                              style: poppinsSemiBold.copyWith(
+                                                fontSize: 24.sp,
+                                                color: AppColors.white,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 8.w,
+                                            ),
+                                            SvgPicture.asset(
+                                                ImageConstant.verifyIcon),
+                                          ],
+                                        ),
+                                        Text(
+                                          "1.5 Km away",
+                                          style: poppinsRegular.copyWith(
+                                            fontSize: 16.sp,
+                                            color: AppColors.bgColor,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            );
+          }).toList(),
         ),
       ],
     );

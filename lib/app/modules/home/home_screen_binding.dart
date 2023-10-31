@@ -18,31 +18,6 @@ class HomeScreenController extends BaseController {
 
   final cards = candidates.map(ExampleCard.new).toList();
 
-  TextEditingController search = TextEditingController();
-
-  // Category List Selected Index
-  int? categoryIndex;
-
-  // Home Feed List Selected Index
-  int? homeFeedIndex;
-
-  //Bottom Show Hide
-  bool bottomIsShow = true;
-
-
-
-  //List Of Location
-  String selectedItem = 'Ahmedabad';
-  List<String> locationList = [
-    'Ahmedabad',
-    'Rajkot',
-    'Surat',
-  ];
-
-  void onItemSelected(newValue) {
-    selectedItem = newValue;
-    update();
-  }
 
 
   bool onSwipe(
