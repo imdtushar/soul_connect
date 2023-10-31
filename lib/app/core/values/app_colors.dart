@@ -17,4 +17,5 @@ abstract class AppColors {
   static const Color borderColor = Color(0xffE8E6EA);
   static const Color bottomBg = Color(0xffF1F5F9);
   static const Color unSelectedBottomItem = Color(0xffADAFBB);
+  static const Color redColorsLight = Color(0xffE94057);
 }

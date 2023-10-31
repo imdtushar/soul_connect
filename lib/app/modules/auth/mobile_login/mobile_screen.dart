@@ -138,7 +138,8 @@ class BodyPartOfUi extends StatelessWidget {
           SizedBox(height: 10.h),
           CustomElevatedButton(
             onTap: () {
-              Get.toNamed(RouterName.verifyOtp);
+              Get.toNamed(RouterName.main);
+              // Get.toNamed(RouterName.verifyOtp);
             },
             text: AppString.sendBtn,
             buttonStyle: CustomButtonStyles.none,

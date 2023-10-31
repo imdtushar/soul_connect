@@ -21,6 +21,7 @@ class MainView extends BaseView<MainController> {
   Widget vBuilder(BuildContext context, controller) {
     // TODO: implement vBuilder
     return Scaffold(
+
       body: PageView.builder(
         controller: controller.navController.pageController,
         physics: const NeverScrollableScrollPhysics(),

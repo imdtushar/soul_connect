@@ -89,4 +89,16 @@ class ImageConstant {
 
   //Close Button Icon
   static String closeButton = '$imagePath/close_icon.png';
+
+  //Setting Button Icon
+  static String settingButton = '$imagePath/setting_icon.svg';
+
+  //Edit Button Icon
+  static String editButton = '$imagePath/edit_icon.svg';
+
+  //Send Button Icon
+  static String sendButton = '$imagePath/send_btn.svg';
+
+  //Current Location Icon
+  static String currentLocation = '$imagePath/current_location.svg';
 }
