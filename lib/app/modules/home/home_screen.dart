@@ -139,180 +139,176 @@ class _ExampleCardState extends State<ExampleCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Stack(children: [
-        Container(
-          decoration: ShapeDecoration(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(
-                width: 4,
-                strokeAlign: BorderSide.strokeAlignOutside,
-                color: Colors.white.withOpacity(0.5),
-              ),
-              borderRadius: BorderRadius.circular(28.r),
+    return Stack(children: [
+      Container(
+        decoration: ShapeDecoration(
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              width: 4,
+              strokeAlign: BorderSide.strokeAlignOutside,
+              color: Colors.white.withOpacity(0.5),
             ),
-            shadows: const [
-              BoxShadow(
-                color: Color(0x33302756),
-                blurRadius: 30,
-                offset: Offset(6, 10),
-                spreadRadius: 0,
-              )
-            ],
-          ),
-          child: ClipRRect(
             borderRadius: BorderRadius.circular(28.r),
-            child: CarouselSlider(
-              disableGesture: false,
-              options: CarouselOptions(
-                  scrollPhysics: const NeverScrollableScrollPhysics(),
-                  height: 512.h,
-                  autoPlay: true,
-                  viewportFraction: 1,
-                  autoPlayCurve: Curves.decelerate,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      current = index;
-                    });
-                  }),
-              items: [1, 2, 3, 4, 5].map((i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.greenAccent,
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-                          fit: BoxFit.cover,
-                        ),
+          ),
+          shadows: const [
+            BoxShadow(
+              color: Color(0x33302756),
+              blurRadius: 30,
+              offset: Offset(6, 10),
+              spreadRadius: 0,
+            )
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(28.r),
+          child: CarouselSlider(
+            disableGesture: false,
+            options: CarouselOptions(
+                scrollPhysics: const NeverScrollableScrollPhysics(),
+                height: 512.h,
+                autoPlay: true,
+                viewportFraction: 1,
+                autoPlayCurve: Curves.decelerate,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    current = index;
+                  });
+                }),
+            items: [1, 2, 3, 4, 5].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.greenAccent,
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                        fit: BoxFit.cover,
                       ),
-                    );
-                  },
-                );
-              }).toList(),
-            ),
+                    ),
+                  );
+                },
+              );
+            }).toList(),
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 300.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(28.r),
-                bottomLeft: Radius.circular(28.r),
-              ),
-              gradient: LinearGradient(
-                begin: const Alignment(0.00, -1.00),
-                end: const Alignment(0, 1),
-                colors: [
-                  const Color(0x00110030),
-                  Colors.black.withOpacity(0.9),
-                ],
-              ),
+      ),
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          height: 300.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(28.r),
+              bottomLeft: Radius.circular(28.r),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 78.w,
-                        width: 78.w,
-                        padding: EdgeInsets.all(3.r),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: AppColors.bgColor,
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Image.network(
-                            "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            height: 78.w,
-                            width: 78.w,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16.w,
-                      ),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  "Jay 22",
-                                  style: poppinsSemiBold.copyWith(
-                                    fontSize: 24.sp,
-                                    color: AppColors.white,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 8.w,
-                                ),
-                                SvgPicture.asset(ImageConstant.verifyIcon),
-                              ],
-                            ),
-                            Text(
-                              "1.5 Km away",
-                              style: poppinsRegular.copyWith(
-                                fontSize: 16.sp,
-                                color: AppColors.bgColor,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
-                      return GestureDetector(
-                        onTap: () => controller.animateToPage(entry.key),
-                        child: Container(
-                          width: 12.0,
-                          height: 12.0,
-                          margin: const EdgeInsets.symmetric(
-                            vertical: 8.0,
-                            horizontal: 4.0,
-                          ),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: current == entry.key
-                                ? AppColors.bgColor
-                                : Colors.black.withOpacity(0.9),
-                            border: Border.all(
-                              width: 2,
-                              color: AppColors.bgColor,
-                            ),
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
+            gradient: LinearGradient(
+              begin: const Alignment(0.00, -1.00),
+              end: const Alignment(0, 1),
+              colors: [
+                const Color(0x00110030),
+                Colors.black.withOpacity(0.9),
               ],
             ),
           ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 78.w,
+                      width: 78.w,
+                      padding: EdgeInsets.all(3.r),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: AppColors.bgColor,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image.network(
+                          "https://images.unsplash.com/photo-1558280417-ea782f829e93?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                          height: 78.w,
+                          width: 78.w,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Jay 22",
+                              style: poppinsSemiBold.copyWith(
+                                fontSize: 24.sp,
+                                color: AppColors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 8.w,
+                            ),
+                            SvgPicture.asset(ImageConstant.verifyIcon),
+                          ],
+                        ),
+                        Text(
+                          "1.5 Km away",
+                          style: poppinsRegular.copyWith(
+                            fontSize: 16.sp,
+                            color: AppColors.bgColor,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
+                    return GestureDetector(
+                      onTap: () => controller.animateToPage(entry.key),
+                      child: Container(
+                        width: 12.0,
+                        height: 12.0,
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 8.0,
+                          horizontal: 4.0,
+                        ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: current == entry.key
+                              ? AppColors.bgColor
+                              : Colors.black.withOpacity(0.9),
+                          border: Border.all(
+                            width: 2,
+                            color: AppColors.bgColor,
+                          ),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+            ],
+          ),
         ),
-      ]),
-    );
+      ),
+    ]);
   }
 }

@@ -80,4 +80,13 @@ class ImageConstant {
 
   //Verify  Icon
   static String verifyIcon = '$imagePath/verified_icon.svg';
+
+  //Button Filter  Icon
+  static String btnFilterIcon = '$imagePath/btn_filter.svg';
+
+  //Like Button Icon
+  static String likeButton = '$imagePath/like_btn.png';
+
+  //Close Button Icon
+  static String closeButton = '$imagePath/close_icon.png';
 }
