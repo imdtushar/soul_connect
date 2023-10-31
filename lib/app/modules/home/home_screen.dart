@@ -83,7 +83,7 @@ class HomeScreen extends BaseView<HomeScreenController> {
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,
                   onTap: () {
-                    controller.cardController.swipeRight();
+                    controller.cardController.swipeLeft();
                   },
                   child: SvgPicture.asset(ImageConstant.likeBtn),
                 ),
@@ -99,7 +99,7 @@ class HomeScreen extends BaseView<HomeScreenController> {
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,
                   onTap: () {
-                    controller.cardController.swipeLeft();
+                    controller.cardController.swipeRight();
                   },
                   child: SvgPicture.asset(ImageConstant.disLikeBtn),
                 ),
