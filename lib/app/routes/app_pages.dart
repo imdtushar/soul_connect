@@ -47,6 +47,8 @@ import 'package:soul_connect/app/modules/smoke/smoke_screen_binding.dart';
 import 'package:soul_connect/app/modules/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:soul_connect/app/modules/tall/tall_screen.dart';
+import 'package:soul_connect/app/modules/tall/tall_screen_binding.dart';
 import 'package:soul_connect/app/modules/work/work_screen.dart';
 import 'package:soul_connect/app/modules/work/work_screen_binding.dart';
 import 'package:soul_connect/app/modules/your_interests/your_interests_screen.dart';
@@ -198,6 +200,11 @@ class AppPages {
       RouterName.location,
       () => LocationScreen(),
       LocationBinding(),
+    ),
+    _createPage(
+      RouterName.tall,
+      () => TallScreen(),
+      TallScreenBinding(),
     ),
   ];
 

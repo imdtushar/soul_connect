@@ -41,7 +41,9 @@ class LikeToDateScreen extends BaseView<LikeToDateScreenController> {
               child: CustomElevatedButton(
                 onTap: () {
                   FocusScope.of(context).unfocus();
-                  Get.toNamed(RouterName.homeTownScreen);
+                  Get.toNamed(RouterName.tall);
+                  // FocusScope.of(context).unfocus();
+                  // Get.toNamed(RouterName.homeTownScreen);
                 },
                 text: AppString.nextBtn,
                 buttonStyle: CustomButtonStyles.none,

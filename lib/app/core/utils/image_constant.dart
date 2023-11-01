@@ -101,4 +101,10 @@ class ImageConstant {
 
   //Current Location Icon
   static String currentLocation = '$imagePath/current_location.svg';
+
+  //CM  Icon
+  static String cmIcon = '$imagePath/cm_icon.png';
+
+  //FT  Icon
+  static String ftIcon = '$imagePath/ft_icon.png';
 }

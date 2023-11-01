@@ -24,16 +24,10 @@ class ProfileScreen extends BaseView<ProfileScreenController> {
               width: double.infinity,
               child: Stack(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(30.r),
-                      bottomLeft: Radius.circular(30.r),
-                    ),
-                    child: Image.network(
-                      "https://images.unsplash.com/photo-1582391988484-3f1691bc1401?auto=format&fit=crop&q=80&w=2093&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
+                  Image.network(
+                    "https://images.unsplash.com/photo-1582391988484-3f1691bc1401?auto=format&fit=crop&q=80&w=2093&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(

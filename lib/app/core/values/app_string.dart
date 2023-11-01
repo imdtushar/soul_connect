@@ -60,6 +60,9 @@ abstract class AppString {
   // Like To Date
   static const String likeToDateLbl = "Who would you\nlike to date 👻";
 
+  // Tall
+  static const String tallLbl = "How tall are\nyou? ✅";
+
   // Home Town
   static const String homeTownLbl = "Where’s your\nhometown 🏡";
   static const String homeTownHint = "Hometown";
