@@ -23,6 +23,11 @@ class RouterName {
   static const String gender = '/gender';
   static const String location = '/location';
   static const String tall = '/tall';
+  static const String setting = '/setting';
+  static const String notification = '/notification';
+  static const String email = '/email';
+  static const String pushNotification = '/pushNotification';
+  static const String teamNotification = '/teamNotification';
 
   static const String home = '/home';
   static const String profile = '/profile';

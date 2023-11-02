@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
@@ -7,6 +8,7 @@ import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen_binding.dart';
 import 'package:flutter/material.dart';
+import 'package:soul_connect/app/routes/router_name.dart';
 
 class ProfileScreen extends BaseView<ProfileScreenController> {
   ProfileScreen({super.key});
@@ -37,7 +39,13 @@ class ProfileScreen extends BaseView<ProfileScreenController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(ImageConstant.settingButton),
+                        InkWell(
+                          onTap: (){
+                            FocusScope.of(context).unfocus();
+                            Get.toNamed(RouterName.setting);
+                          },
+                          child: SvgPicture.asset(ImageConstant.settingButton),
+                        ),
                         SvgPicture.asset(ImageConstant.editButton),
                       ],
                     ),

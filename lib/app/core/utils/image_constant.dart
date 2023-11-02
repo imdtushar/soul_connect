@@ -107,4 +107,37 @@ class ImageConstant {
 
   //FT  Icon
   static String ftIcon = '$imagePath/ft_icon.png';
+
+  //Notification  Icon
+  static String notification = '$imagePath/notification_icon.svg';
+
+  //Arrow  Icon
+  static String arrow = '$imagePath/arrow_forword.svg';
+
+  //ChangePassword  Icon
+  static String changePassword = '$imagePath/change_pass.svg';
+
+  //accountSetting  Icon
+  static String accountSetting = '$imagePath/account_setting.svg';
+
+  //privacy  Icon
+  static String privacy = '$imagePath/privacy.svg';
+
+  //help  Icon
+  static String help = '$imagePath/help.svg';
+
+  //feedback  Icon
+  static String feedback = '$imagePath/feedback.svg';
+
+  //block  Icon
+  static String block = '$imagePath/block.svg';
+
+  //about  Icon
+  static String about = '$imagePath/about.svg';
+
+  //logout  Icon
+  static String logout = '$imagePath/logout.svg';
+
+  //delete  Icon
+  static String delete = '$imagePath/delete.svg';
 }

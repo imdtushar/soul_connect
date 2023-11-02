@@ -19,4 +19,8 @@ abstract class AppColors {
   static const Color unSelectedBottomItem = Color(0xffADAFBB);
   static const Color redColorsLight = Color(0xffE94057);
   static const Color hintColor = Color(0xffD6D6D6);
+  static const Color dividerLine = Color(0xff9D9D9D);
+  static const Color dividerLine1 = Color(0xffB1B1B1);
+  static const Color cornerColor = Color(0xffCFCFCF);
+  static const Color blueColor = Color(0xff0057D9);
 }
