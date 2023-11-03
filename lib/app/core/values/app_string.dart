@@ -13,6 +13,7 @@ abstract class AppString {
   static const String createPassLbl = "Create a new password";
   static const String createPassHint = "Create password";
   static const String confirmPassHint = "Confirm Password";
+  static const String currentPassHint = "Current Password";
   static const String nextBtn = "Next";
 
   // Forgot Password
@@ -102,4 +103,6 @@ abstract class AppString {
   static const String locationHint = "Location";
   static const String searchLocationHint = "Search New Location";
 
+  // Change Password
+static const String changePassLbl = 'Change Password';
 }

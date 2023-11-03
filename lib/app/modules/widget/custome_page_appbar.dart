@@ -8,7 +8,10 @@ import 'package:soul_connect/app/modules/widget/custom_image_view.dart';
 
 class CustomPageAppBar extends StatelessWidget {
   final String title;
-  const CustomPageAppBar({super.key, required this.title});
+  final bool? lastOption;
+
+  const CustomPageAppBar(
+      {super.key, required this.title, this.lastOption = false});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +40,17 @@ class CustomPageAppBar extends StatelessWidget {
                   ),
                 ),
               ),
+              if (lastOption == true)
+                Positioned(
+                  right: 23.w,
+                  bottom: 0,
+                  top: 0,
+                  child: CustomImageView(
+                    height: 50,
+                    svgPath: ImageConstant.addBlockContact,
+                    onTap: () {},
+                  ),
+                ),
             ],
           ),
         ),

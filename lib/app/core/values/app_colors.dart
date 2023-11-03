@@ -23,4 +23,5 @@ abstract class AppColors {
   static const Color dividerLine1 = Color(0xffB1B1B1);
   static const Color cornerColor = Color(0xffCFCFCF);
   static const Color blueColor = Color(0xff0057D9);
+  static const Color smallColorText = Color(0xff707070);
 }

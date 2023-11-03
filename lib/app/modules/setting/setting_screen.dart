@@ -81,62 +81,72 @@ class SettingScreen extends BaseView<SettingScreenController> {
           height: 1,
           color: AppColors.dividerLine1,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 10.w,
-            vertical: 8.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  SvgPicture.asset(ImageConstant.changePassword),
-                  SizedBox(
-                    width: 6.w,
-                  ),
-                  Text(
-                    "Change Password",
-                    style: poppinsRegular.copyWith(
-                      fontSize: 16.sp,
-                      color: AppColors.black,
+        InkWell(
+          onTap: (){
+            Get.toNamed(RouterName.changePassword);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+              vertical: 8.h,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    SvgPicture.asset(ImageConstant.changePassword),
+                    SizedBox(
+                      width: 6.w,
                     ),
-                  ),
-                ],
-              ),
-              SvgPicture.asset(ImageConstant.arrow),
-            ],
+                    Text(
+                      "Change Password",
+                      style: poppinsRegular.copyWith(
+                        fontSize: 16.sp,
+                        color: AppColors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                SvgPicture.asset(ImageConstant.arrow),
+              ],
+            ),
           ),
         ),
         const Divider(
           height: 1,
           color: AppColors.dividerLine1,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 10.w,
-            vertical: 8.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  SvgPicture.asset(ImageConstant.accountSetting),
-                  SizedBox(
-                    width: 6.w,
-                  ),
-                  Text(
-                    "Account Settings",
-                    style: poppinsRegular.copyWith(
-                      fontSize: 16.sp,
-                      color: AppColors.black,
+        InkWell(
+          onTap: (){
+            Get.toNamed(RouterName.accountSetting);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+              vertical: 8.h,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    SvgPicture.asset(ImageConstant.accountSetting),
+                    SizedBox(
+                      width: 6.w,
                     ),
-                  ),
-                ],
-              ),
-              SvgPicture.asset(ImageConstant.arrow),
-            ],
+                    Text(
+                      "Account Settings",
+                      style: poppinsRegular.copyWith(
+                        fontSize: 16.sp,
+                        color: AppColors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                SvgPicture.asset(ImageConstant.arrow),
+              ],
+            ),
           ),
         ),
         const Divider(
@@ -236,31 +246,36 @@ class SettingScreen extends BaseView<SettingScreenController> {
           height: 1,
           color: AppColors.dividerLine1,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 10.w,
-            vertical: 8.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  SvgPicture.asset(ImageConstant.block),
-                  SizedBox(
-                    width: 6.w,
-                  ),
-                  Text(
-                    "Block Contact",
-                    style: poppinsRegular.copyWith(
-                      fontSize: 16.sp,
-                      color: AppColors.black,
+        InkWell(
+          onTap: (){
+            Get.toNamed(RouterName.blockContact);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+              vertical: 8.h,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    SvgPicture.asset(ImageConstant.block),
+                    SizedBox(
+                      width: 6.w,
                     ),
-                  ),
-                ],
-              ),
-              SvgPicture.asset(ImageConstant.arrow),
-            ],
+                    Text(
+                      "Block Contact",
+                      style: poppinsRegular.copyWith(
+                        fontSize: 16.sp,
+                        color: AppColors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                SvgPicture.asset(ImageConstant.arrow),
+              ],
+            ),
           ),
         ),
         const Divider(

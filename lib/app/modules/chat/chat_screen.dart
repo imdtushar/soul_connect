@@ -15,9 +15,10 @@ class ChatScreen extends BaseView<ChatScreenController> {
       ),
       home: const Scaffold(
         backgroundColor: AppColors.bgColor,
-        body: Center(child: Text('Chat')),
+        body: Center(
+          child: Text('Chat'),
+        ),
       ),
     );
   }
 }
-

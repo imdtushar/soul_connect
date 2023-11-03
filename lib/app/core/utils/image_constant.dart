@@ -140,4 +140,7 @@ class ImageConstant {
 
   //delete  Icon
   static String delete = '$imagePath/delete.svg';
+
+  //addBlockContact  Icon
+  static String addBlockContact = '$imagePath/new_block_contact.svg';
 }

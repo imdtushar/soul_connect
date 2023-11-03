@@ -28,6 +28,10 @@ class RouterName {
   static const String email = '/email';
   static const String pushNotification = '/pushNotification';
   static const String teamNotification = '/teamNotification';
+  static const String changePassword = '/changePassword';
+  static const String accountSetting = '/accountSetting';
+  static const String editNumber = '/editNumber';
+  static const String blockContact = '/blockContact';
 
   static const String home = '/home';
   static const String profile = '/profile';

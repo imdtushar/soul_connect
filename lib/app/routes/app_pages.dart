@@ -1,3 +1,5 @@
+import 'package:soul_connect/app/modules/account_setting/account_setting_screen.dart';
+import 'package:soul_connect/app/modules/account_setting/account_setting_screen_binding.dart';
 import 'package:soul_connect/app/modules/age/age_screen.dart';
 import 'package:soul_connect/app/modules/age/age_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/create_new_password/new_password_screen.dart';
@@ -12,12 +14,18 @@ import 'package:soul_connect/app/modules/auth/signup/signup_screen.dart';
 import 'package:soul_connect/app/modules/auth/signup/signup_screen_binding.dart';
 import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen.dart';
 import 'package:soul_connect/app/modules/auth/verify_otp/verify_otp_screen_binding.dart';
+import 'package:soul_connect/app/modules/block_contact/block_contact.dart';
+import 'package:soul_connect/app/modules/block_contact/block_contact_binding.dart';
 import 'package:soul_connect/app/modules/certifications/certification_screen.dart';
 import 'package:soul_connect/app/modules/certifications/certification_screen_binding.dart';
+import 'package:soul_connect/app/modules/change_password/change_password_screen.dart';
+import 'package:soul_connect/app/modules/change_password/change_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen_binding.dart';
+import 'package:soul_connect/app/modules/edit_number/edit_number_screen.dart';
+import 'package:soul_connect/app/modules/edit_number/edit_number_screen_binding.dart';
 import 'package:soul_connect/app/modules/email/email_screen.dart';
 import 'package:soul_connect/app/modules/email/email_screen_binding.dart';
 import 'package:soul_connect/app/modules/gender/gender_screen.dart';
@@ -240,6 +248,26 @@ class AppPages {
       RouterName.teamNotification,
       () => TeamNotificationScreen(),
       TeamNotificationScreenBinding(),
+    ),
+    _createPage(
+      RouterName.changePassword,
+      () => ChangePasswordScreen(),
+      ChangePasswordScreenBinding(),
+    ),
+    _createPage(
+      RouterName.accountSetting,
+      () => AccountSettingScreen(),
+      AccountSettingScreenBinding(),
+    ),
+    _createPage(
+      RouterName.editNumber,
+      () => EditNumberScreen(),
+      EditNumberScreenBinding(),
+    ),
+    _createPage(
+      RouterName.blockContact,
+      () => BlockContact(),
+      BlockContactBinding(),
     ),
   ];
 
