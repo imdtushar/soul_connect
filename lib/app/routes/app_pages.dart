@@ -26,6 +26,8 @@ import 'package:soul_connect/app/modules/drink/drink_screen.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen_binding.dart';
 import 'package:soul_connect/app/modules/edit_number/edit_number_screen.dart';
 import 'package:soul_connect/app/modules/edit_number/edit_number_screen_binding.dart';
+import 'package:soul_connect/app/modules/edit_profile/edit_profile_screen.dart';
+import 'package:soul_connect/app/modules/edit_profile/edit_profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/email/email_screen.dart';
 import 'package:soul_connect/app/modules/email/email_screen_binding.dart';
 import 'package:soul_connect/app/modules/gender/gender_screen.dart';
@@ -268,6 +270,11 @@ class AppPages {
       RouterName.blockContact,
       () => BlockContact(),
       BlockContactBinding(),
+    ),
+    _createPage(
+      RouterName.editProfile,
+      () => EditProfileScreen(),
+      EditProfileScreenBinding(),
     ),
   ];
 

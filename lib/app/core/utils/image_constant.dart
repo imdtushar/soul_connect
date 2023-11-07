@@ -143,4 +143,70 @@ class ImageConstant {
 
   //addBlockContact  Icon
   static String addBlockContact = '$imagePath/new_block_contact.svg';
+
+  //languages  Icon
+  static String languagesIcon = '$imagePath/languages_icon.svg';
+
+  //lookingFor  Icon
+  static String lookingFor = '$imagePath/looking_for.svg';
+
+  //height  Icon
+  static String heightIcon = '$imagePath/height.svg';
+
+  //interest  Icon
+  static String interestIcon = '$imagePath/interests.svg';
+
+  //education  Icon
+  static String education = '$imagePath/education.svg';
+
+  //familyPlan  Icon
+  static String familyPlan = '$imagePath/family_plans.svg';
+
+  //communication  Icon
+  static String communicationIcon = '$imagePath/communication.svg';
+
+  //Pet  Icon
+  static String petsIcons = '$imagePath/pets.svg';
+
+  //Drinking  Icon
+  static String drinkingIcon = '$imagePath/drinking.svg';
+
+  //WorkOut  Icon
+  static String workoutIcon = '$imagePath/workout.svg';
+
+  //dietary  Icon
+  static String dietaryIcon = '$imagePath/dietary.svg';
+
+  //socialMedia  Icon
+  static String socialMediaIcon = '$imagePath/social_media.svg';
+
+  //sleeping  Icon
+  static String sleepingIcon = '$imagePath/sleeping.svg';
+
+  //jobTitle  Icon
+  static String jobTitleIcon = '$imagePath/job_title.svg';
+
+  //company  Icon
+  static String companyIcon = '$imagePath/company.svg';
+
+  //school  Icon
+  static String schoolIcon = '$imagePath/school.svg';
+
+  //living  Icon
+  static String livingIcon = '$imagePath/living.svg';
+
+  //gender  Icon
+  static String genderIcon = '$imagePath/gender.svg';
+
+  //orientation  Icon
+  static String orientationIcon = '$imagePath/orientation.svg';
+
+  //controlProfile  Icon
+  static String controlProfileIcon = '$imagePath/control_profile.svg';
+
+  //addPhotos  Icon
+  static String addPhotosIcon = '$imagePath/add_photos.svg';
+
+  //remove  Icon
+  static String removeIcon = '$imagePath/remove_icon.svg';
 }

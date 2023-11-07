@@ -40,13 +40,19 @@ class ProfileScreen extends BaseView<ProfileScreenController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             FocusScope.of(context).unfocus();
                             Get.toNamed(RouterName.setting);
                           },
                           child: SvgPicture.asset(ImageConstant.settingButton),
                         ),
-                        SvgPicture.asset(ImageConstant.editButton),
+                        InkWell(
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                            Get.toNamed(RouterName.editProfile);
+                          },
+                          child: SvgPicture.asset(ImageConstant.editButton),
+                        ),
                       ],
                     ),
                   ),

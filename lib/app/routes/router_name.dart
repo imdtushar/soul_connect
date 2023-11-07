@@ -32,6 +32,7 @@ class RouterName {
   static const String accountSetting = '/accountSetting';
   static const String editNumber = '/editNumber';
   static const String blockContact = '/blockContact';
+  static const String editProfile = '/editProfile';
 
   static const String home = '/home';
   static const String profile = '/profile';
