@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:reorderables/reorderables.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
@@ -9,6 +10,8 @@ import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/edit_profile/edit_profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custome_page_appbar.dart';
+
+import '../../routes/router_name.dart';
 
 class EditProfileScreen extends BaseView<EditProfileScreenController> {
   EditProfileScreen({super.key});
@@ -171,7 +174,9 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(RouterName.tall);
+                      },
                       title: "Height",
                       icon: ImageConstant.heightIcon,
                     ),
@@ -194,7 +199,9 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                 child: Column(
                   children: [
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(RouterName.yourInterest);
+                      },
                       title: "Interests",
                       icon: ImageConstant.interestIcon,
                     ),
@@ -224,7 +231,9 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(RouterName.drink);
+                      },
                       title: "Drinking",
                       icon: ImageConstant.drinkingIcon,
                     ),
@@ -295,13 +304,17 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(RouterName.gender);
+                      },
                       title: "Gender",
                       icon: ImageConstant.genderIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(RouterName.sexualScreen);
+                      },
                       title: "Sexual Orientation",
                       icon: ImageConstant.orientationIcon,
                     ),
@@ -322,7 +335,9 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                   ),
                 ),
                 child: ListDesign(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(RouterName.controlProfile);
+                  },
                   title: "Control Your Profile",
                   icon: ImageConstant.controlProfileIcon,
                 ),
@@ -367,7 +382,7 @@ class ListDesign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap,
+      onTap: onTap,
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 10.w,

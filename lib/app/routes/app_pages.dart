@@ -22,6 +22,10 @@ import 'package:soul_connect/app/modules/change_password/change_password_screen.
 import 'package:soul_connect/app/modules/change_password/change_password_screen_binding.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen.dart';
 import 'package:soul_connect/app/modules/chat/chat_screen_binding.dart';
+import 'package:soul_connect/app/modules/control_profile/control_profile_binding.dart';
+import 'package:soul_connect/app/modules/control_profile/control_profile_screen.dart';
+import 'package:soul_connect/app/modules/delete_pause_account/delete_pause_account_binding.dart';
+import 'package:soul_connect/app/modules/delete_pause_account/delete_pause_account_screen.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen.dart';
 import 'package:soul_connect/app/modules/drink/drink_screen_binding.dart';
 import 'package:soul_connect/app/modules/edit_number/edit_number_screen.dart';
@@ -275,6 +279,16 @@ class AppPages {
       RouterName.editProfile,
       () => EditProfileScreen(),
       EditProfileScreenBinding(),
+    ),
+    _createPage(
+      RouterName.deleteAndPauseAccount,
+      () => DeletePauseAccountScreen(),
+      DeletePauseAccountBinding(),
+    ),
+    _createPage(
+      RouterName.controlProfile,
+      () => ControlProfileScreen(),
+      ControlProfileBinding(),
     ),
   ];
 

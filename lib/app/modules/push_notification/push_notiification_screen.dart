@@ -57,6 +57,7 @@ class PushNotificationScreen
                           SizedBox(
                             height: 30,
                             child: Switch(
+                              activeColor: AppColors.white,
                               inactiveThumbColor: AppColors.white,
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
@@ -94,6 +95,7 @@ class PushNotificationScreen
                           SizedBox(
                             height: 30,
                             child: Switch(
+                              activeColor: AppColors.white,
                               inactiveThumbColor: AppColors.white,
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
@@ -131,6 +133,7 @@ class PushNotificationScreen
                           SizedBox(
                             height: 30,
                             child: Switch(
+                              activeColor: AppColors.white,
                               inactiveThumbColor: AppColors.white,
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
@@ -168,6 +171,7 @@ class PushNotificationScreen
                           SizedBox(
                             height: 30,
                             child: Switch(
+                              activeColor: AppColors.white,
                               inactiveThumbColor: AppColors.white,
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
@@ -205,6 +209,7 @@ class PushNotificationScreen
                           SizedBox(
                             height: 30,
                             child: Switch(
+                              activeColor: AppColors.white,
                               inactiveThumbColor: AppColors.white,
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
@@ -242,6 +247,7 @@ class PushNotificationScreen
                           SizedBox(
                             height: 30,
                             child: Switch(
+                              activeColor: AppColors.white,
                               inactiveThumbColor: AppColors.white,
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),

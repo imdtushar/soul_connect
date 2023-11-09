@@ -344,31 +344,36 @@ class SettingScreen extends BaseView<SettingScreenController> {
           height: 1,
           color: AppColors.dividerLine1,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 10.w,
-            vertical: 8.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  SvgPicture.asset(ImageConstant.delete),
-                  SizedBox(
-                    width: 6.w,
-                  ),
-                  Text(
-                    "Delete Account",
-                    style: poppinsRegular.copyWith(
-                      fontSize: 16.sp,
-                      color: AppColors.gradientStart,
+        InkWell(
+          onTap: (){
+            Get.toNamed(RouterName.deleteAndPauseAccount);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+              vertical: 8.h,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    SvgPicture.asset(ImageConstant.delete),
+                    SizedBox(
+                      width: 6.w,
                     ),
-                  ),
-                ],
-              ),
-              SvgPicture.asset(ImageConstant.arrow),
-            ],
+                    Text(
+                      "Delete or Pause Account",
+                      style: poppinsRegular.copyWith(
+                        fontSize: 16.sp,
+                        color: AppColors.gradientStart,
+                      ),
+                    ),
+                  ],
+                ),
+                SvgPicture.asset(ImageConstant.arrow),
+              ],
+            ),
           ),
         ),
       ],
