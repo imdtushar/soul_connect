@@ -46,35 +46,40 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                 width: double.infinity,
                 child: ReorderableWrap(
                   runAlignment: WrapAlignment.center,
-                  alignment: WrapAlignment.center,
+                  alignment: controller.pickedFileList.isNotEmpty
+                      ? WrapAlignment.center
+                      : WrapAlignment.start,
                   crossAxisAlignment: WrapCrossAlignment.center,
 
                   minMainAxisCount: 3,
                   maxMainAxisCount: 3,
-                  // padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  padding: controller.pickedFileList.isNotEmpty
+                      ? EdgeInsets.zero
+                      : EdgeInsets.symmetric(horizontal: 10.w),
                   direction: Axis.horizontal,
                   spacing: 2,
                   runSpacing: 2,
                   onReorder: (oldIndex, newIndex) {
-                    final element = controller.pickedFileList.removeAt(oldIndex);
+                    final element =
+                        controller.pickedFileList.removeAt(oldIndex);
                     controller.pickedFileList.insert(newIndex, element);
                     controller.update();
                   },
                   // crossAxisAlignment: WrapCrossAlignment.start,
                   header: [
                     Padding(
-                      padding:  EdgeInsets.only(top: 6.h,right: 6.w),
+                      padding: EdgeInsets.only(top: 6.h, right: 6.w),
                       child: InkWell(
                         borderRadius: BorderRadius.circular(10.r),
                         onTap: () {
-                          controller
-                              .imagePickerGallery(controller.pickedFileList.length);
+                          controller.imagePickerGallery(
+                              controller.pickedFileList.length);
                         },
                         child: SvgPicture.asset(
                           ImageConstant.addPhotosIcon,
                           height: 150.w,
                           width: 122.w,
-                         fit: BoxFit.fill,
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
@@ -132,7 +137,6 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                   }).toList(),
                 ),
               ),
-
               SizedBox(
                 height: 20.h,
               ),
