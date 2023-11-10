@@ -62,8 +62,7 @@ class BodyUI extends StatelessWidget {
             autofocus: false,
             textInputType: TextInputType.text,
           ),
-          SizedBox(height: 10.h),
-          SizedBox(height: 50.h),
+          SizedBox(height: 60.h),
           CustomElevatedButton(
             onTap: () {
               FocusScope.of(context).unfocus();

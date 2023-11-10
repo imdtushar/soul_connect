@@ -10,8 +10,9 @@ import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/edit_profile/edit_profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/widget/custome_page_appbar.dart';
-
+import 'package:soul_connect/app/modules/widget/single_textfield_widget.dart';
 import '../../routes/router_name.dart';
+import '../widget/common_list_widget.dart';
 
 class EditProfileScreen extends BaseView<EditProfileScreenController> {
   EditProfileScreen({super.key});
@@ -156,19 +157,41 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                 child: Column(
                   children: [
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        pushSingleTextFieldScreen(
+                          context: context,
+                          title: 'About',
+                          onTap: () {},
+                          controller: controller.aboutController,
+                          hint: 'About yourself',
+                        );
+                      },
                       title: "About",
                       icon: ImageConstant.about,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Languages I Know',
+                          listPass: controller.language,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Languages I Know",
                       icon: ImageConstant.languagesIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Looking for',
+                          listPass: controller.lookingFor,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Looking for",
                       icon: ImageConstant.lookingFor,
                     ),
@@ -207,57 +230,118 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Education',
+                          listPass: controller.education,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Education",
                       icon: ImageConstant.education,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Family Plans',
+                          listPass: controller.familyPLan,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Family Plans",
                       icon: ImageConstant.familyPlan,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Communication Style',
+                          listPass: controller.communication,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Communication Style",
                       icon: ImageConstant.communicationIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Pets',
+                          listPass: controller.pet,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Pets",
                       icon: ImageConstant.petsIcons,
                     ),
                     const DividerScreen(),
                     ListDesign(
                       onTap: () {
-                        Get.toNamed(RouterName.drink);
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Drinking',
+                          listPass: controller.drinking,
+                          btnClick: () {},
+                        );
                       },
                       title: "Drinking",
                       icon: ImageConstant.drinkingIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Workout',
+                          listPass: controller.workout,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Workout",
                       icon: ImageConstant.workoutIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Dietary Preference',
+                          listPass: controller.dietaryPreference,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Dietary Preference",
                       icon: ImageConstant.dietaryIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Social Media',
+                          listPass: controller.socialMedia,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Social Media",
                       icon: ImageConstant.socialMediaIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        navigateToCommonListScreen(
+                          context: context,
+                          title: 'Sleeping Habits',
+                          listPass: controller.sleepingHabits,
+                          btnClick: () {},
+                        );
+                      },
                       title: "Sleeping Habits",
                       icon: ImageConstant.sleepingIcon,
                     ),
@@ -280,25 +364,57 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
                 child: Column(
                   children: [
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        pushSingleTextFieldScreen(
+                          context: context,
+                          title: 'Job Title',
+                          onTap: () {},
+                          controller: controller.jobTitleController,
+                          hint: 'Enter your Job Title',
+                        );
+                      },
                       title: "Job Title",
                       icon: ImageConstant.jobTitleIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        pushSingleTextFieldScreen(
+                          context: context,
+                          title: 'Company',
+                          onTap: () {},
+                          controller: controller.companyController,
+                          hint: 'Enter Company Name',
+                        );
+                      },
                       title: "Company",
                       icon: ImageConstant.companyIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        pushSingleTextFieldScreen(
+                          context: context,
+                          title: 'School',
+                          onTap: () {},
+                          controller: controller.companyController,
+                          hint: 'Enter your School Name',
+                        );
+                      },
                       title: "School",
                       icon: ImageConstant.schoolIcon,
                     ),
                     const DividerScreen(),
                     ListDesign(
-                      onTap: () {},
+                      onTap: () {
+                        pushSingleTextFieldScreen(
+                          context: context,
+                          title: 'Living in',
+                          onTap: () {},
+                          controller: controller.cityController,
+                          hint: 'Enter your City',
+                        );
+                      },
                       title: "Living in",
                       icon: ImageConstant.livingIcon,
                     ),
@@ -353,6 +469,7 @@ class EditProfileScreen extends BaseView<EditProfileScreenController> {
   }
 }
 
+//Divider Common Widget
 class DividerScreen extends StatelessWidget {
   const DividerScreen({
     super.key,
@@ -367,6 +484,7 @@ class DividerScreen extends StatelessWidget {
   }
 }
 
+// List Design
 class ListDesign extends StatelessWidget {
   const ListDesign({
     super.key,
@@ -412,4 +530,44 @@ class ListDesign extends StatelessWidget {
       ),
     );
   }
+}
+
+// Navigation SingleTextFieldWidget Common Function
+void pushSingleTextFieldScreen({
+  required BuildContext context,
+  required String title,
+  required VoidCallback onTap,
+  required TextEditingController controller,
+  required String hint,
+}) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => SingleTextFieldWidget(
+        title: title,
+        onTap: onTap,
+        controller: controller,
+        hint: hint,
+      ),
+    ),
+  );
+}
+
+// Navigation navigateToCommonListScreen Common Function
+void navigateToCommonListScreen({
+  required BuildContext context,
+  required String title,
+  required List<dynamic> listPass,
+  required VoidCallback btnClick,
+}) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => CommonListWidget(
+        title: title,
+        listPass: listPass,
+        btnClick: btnClick,
+      ),
+    ),
+  );
 }
