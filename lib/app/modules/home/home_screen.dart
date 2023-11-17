@@ -2,12 +2,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/data/model/example_card_model.dart';
+import '../../routes/router_name.dart';
 import 'home_screen_binding.dart';
 
 class HomeScreen extends BaseView<HomeScreenController> {
@@ -45,8 +47,14 @@ class HomeScreen extends BaseView<HomeScreenController> {
                       SizedBox(
                         width: 20.w,
                       ),
-                      SvgPicture.asset(
-                        ImageConstant.filterHome,
+                      InkWell(
+                        onTap: (){
+                          FocusScope.of(context).unfocus();
+                          Get.toNamed(RouterName.filter);
+                        },
+                        child: SvgPicture.asset(
+                          ImageConstant.filterHome,
+                        ),
                       ),
                     ],
                   ),

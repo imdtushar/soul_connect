@@ -34,6 +34,8 @@ import 'package:soul_connect/app/modules/edit_profile/edit_profile_screen.dart';
 import 'package:soul_connect/app/modules/edit_profile/edit_profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/email/email_screen.dart';
 import 'package:soul_connect/app/modules/email/email_screen_binding.dart';
+import 'package:soul_connect/app/modules/filter/filter_screen.dart';
+import 'package:soul_connect/app/modules/filter/filter_screen_controller.dart';
 import 'package:soul_connect/app/modules/gender/gender_screen.dart';
 import 'package:soul_connect/app/modules/gender/gender_screen_binding.dart';
 import 'package:soul_connect/app/modules/home/home_screen.dart';
@@ -289,6 +291,11 @@ class AppPages {
       RouterName.controlProfile,
       () => ControlProfileScreen(),
       ControlProfileBinding(),
+    ),
+    _createPage(
+      RouterName.filter,
+      () => FilterScreen(),
+      FilterScreenBinding(),
     ),
   ];
 
