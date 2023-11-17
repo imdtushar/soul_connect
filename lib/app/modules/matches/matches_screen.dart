@@ -1,11 +1,14 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/utils/image_constant.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen_binding.dart';
+
+import '../../routes/router_name.dart';
 
 class MatchesScreen extends BaseView<MatchesScreenController> {
   MatchesScreen({super.key});
@@ -158,10 +161,16 @@ class MatchesScreen extends BaseView<MatchesScreenController> {
                                               AppColors.white.withOpacity(0.8),
                                         ),
                                       ),
-                                      Image.asset(
-                                        ImageConstant.likeButton,
-                                        height: 26.w,
-                                        width: 26.w,
+                                      InkWell(
+                                        onTap: (){
+                                          FocusScope.of(context).unfocus();
+                                          Get.toNamed(RouterName.otherProfile);
+                                        },
+                                        child: Image.asset(
+                                          ImageConstant.likeButton,
+                                          height: 26.w,
+                                          width: 26.w,
+                                        ),
                                       ),
                                     ],
                                   ),

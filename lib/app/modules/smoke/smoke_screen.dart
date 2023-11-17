@@ -29,6 +29,13 @@ class SmokeScreen extends BaseView<SmokeScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.drink);
               },
+              skipWidget: Text(
+                "Skip",
+                style: poppinsRegular.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.black,
+                ),
+              ),
             ),
             SizedBox(
               height: 30.h,

@@ -28,6 +28,13 @@ class YourInterestScreen extends BaseView<YourInterestScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.gender);
               },
+              skipWidget: Text(
+                "Skip",
+                style: poppinsRegular.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.black,
+                ),
+              ),
             ),
             SizedBox(
               height: 30.h,

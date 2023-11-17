@@ -1,10 +1,11 @@
 import 'dart:math';
+// import 'package:photo_manager/photo_manager.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:wechat_assets_picker/wechat_assets_picker.dart';
+// import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 abstract class AppUtility {
   /// Logger
@@ -398,25 +399,25 @@ abstract class AppUtility {
   }
 
   static multipleImagePicker(int maxLimit) async {
-    var newFileList = <AssetEntity>[];
-    final List<AssetEntity>? selectedImages = await AssetPicker.pickAssets(
-      Get.context!,
-      pickerConfig: AssetPickerConfig(
-        textDelegate: const EnglishAssetPickerTextDelegate(),
-        filterOptions: FilterOptionGroup(
-          containsLivePhotos: true,
-          imageOption: const FilterOption(),
-        ),
-        maxAssets: maxLimit,
-        requestType: RequestType.image,
-        selectedAssets: newFileList,
-      ),
-    );
-    if (selectedImages != null) {
-      return selectedImages;
-    } else {
-      return null;
-    }
+    // var newFileList = <AssetEntity>[];
+    // final List<AssetEntity>? selectedImages = await AssetPicker.pickAssets(
+    //   Get.context!,
+    //   pickerConfig: AssetPickerConfig(
+    //     textDelegate: const EnglishAssetPickerTextDelegate(),
+    //     filterOptions: FilterOptionGroup(
+    //       containsLivePhotos: true,
+    //       imageOption: const FilterOption(),
+    //     ),
+    //     maxAssets: maxLimit,
+    //     requestType: RequestType.image,
+    //     selectedAssets: newFileList,
+    //   ),
+    // );
+    // if (selectedImages != null) {
+    //   return selectedImages;
+    // } else {
+    //   return null;
+    // }
   }
 
   static showInfoDialog(context, String infoText) {

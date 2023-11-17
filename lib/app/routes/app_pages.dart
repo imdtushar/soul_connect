@@ -52,6 +52,8 @@ import 'package:soul_connect/app/modules/matches/matches_screen.dart';
 import 'package:soul_connect/app/modules/matches/matches_screen_binding.dart';
 import 'package:soul_connect/app/modules/notification/notification_screen.dart';
 import 'package:soul_connect/app/modules/notification/notification_screen_binding.dart';
+import 'package:soul_connect/app/modules/other_user_profile/other_profile_screen.dart';
+import 'package:soul_connect/app/modules/other_user_profile/other_profile_screen_binding.dart';
 import 'package:soul_connect/app/modules/presentation/presentation_screen.dart';
 import 'package:soul_connect/app/modules/presentation/presentation_screen_binding.dart';
 import 'package:soul_connect/app/modules/profile/profile_screen.dart';
@@ -296,6 +298,11 @@ class AppPages {
       RouterName.filter,
       () => FilterScreen(),
       FilterScreenBinding(),
+    ),
+    _createPage(
+      RouterName.otherProfile,
+      () => OtherProfileScreen(),
+      OtherProfileScreenBinding(),
     ),
   ];
 

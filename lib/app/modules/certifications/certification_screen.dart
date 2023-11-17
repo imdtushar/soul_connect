@@ -29,6 +29,13 @@ class CertificationScreen extends BaseView<CertificationScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.religion);
               },
+              skipWidget: Text(
+                "Skip",
+                style: poppinsRegular.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.black,
+                ),
+              ),
             ),
             SizedBox(
               height: 30.h,

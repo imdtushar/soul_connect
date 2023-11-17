@@ -76,17 +76,19 @@ class FilterScreen extends BaseView<FilterScreenController> {
                             ),
                           ],
                         ),
-                        CustomElevatedButton(
+                        SizedBox(
                           height: 28.h,
-                          width: 100.w,
-                          onTap: () {},
-                          text: 'UPDATE',
-                          buttonStyle: CustomButtonStyles.none,
-                          decoration: CustomButtonStyles
-                              .gradientOnErrorToPinkDecoration,
-                          buttonTextStyle: poppinsMedium.copyWith(
-                            fontSize: 16.sp,
-                            color: AppColors.white,
+                          width: MediaQuery.of(context).size.width / 3,
+                          child: CustomElevatedButton(
+                            onTap: () {},
+                            text: 'UPDATE',
+                            buttonStyle: CustomButtonStyles.none,
+                            decoration: CustomButtonStyles
+                                .gradientOnErrorToPinkDecoration,
+                            buttonTextStyle: poppinsMedium.copyWith(
+                              fontSize: 16.sp,
+                              color: AppColors.white,
+                            ),
                           ),
                         )
                       ],
@@ -457,7 +459,7 @@ class FilterScreen extends BaseView<FilterScreenController> {
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
                               trackOutlineColor:
-                              MaterialStateProperty.all(Colors.transparent),
+                                  MaterialStateProperty.all(Colors.transparent),
                               value: controller.photos,
                               onChanged: (value) {
                                 controller.photos = value;
@@ -495,7 +497,7 @@ class FilterScreen extends BaseView<FilterScreenController> {
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
                               trackOutlineColor:
-                              MaterialStateProperty.all(Colors.transparent),
+                                  MaterialStateProperty.all(Colors.transparent),
                               value: controller.bio,
                               onChanged: (value) {
                                 controller.bio = value;
@@ -533,7 +535,7 @@ class FilterScreen extends BaseView<FilterScreenController> {
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
                               trackOutlineColor:
-                              MaterialStateProperty.all(Colors.transparent),
+                                  MaterialStateProperty.all(Colors.transparent),
                               value: controller.school,
                               onChanged: (value) {
                                 controller.school = value;
@@ -571,7 +573,7 @@ class FilterScreen extends BaseView<FilterScreenController> {
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
                               trackOutlineColor:
-                              MaterialStateProperty.all(Colors.transparent),
+                                  MaterialStateProperty.all(Colors.transparent),
                               value: controller.work,
                               onChanged: (value) {
                                 controller.work = value;
@@ -609,7 +611,7 @@ class FilterScreen extends BaseView<FilterScreenController> {
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
                               trackOutlineColor:
-                              MaterialStateProperty.all(Colors.transparent),
+                                  MaterialStateProperty.all(Colors.transparent),
                               value: controller.facebook,
                               onChanged: (value) {
                                 controller.facebook = value;
@@ -647,7 +649,7 @@ class FilterScreen extends BaseView<FilterScreenController> {
                               trackColor: MaterialStateProperty.all(
                                   AppColors.gradientStart),
                               trackOutlineColor:
-                              MaterialStateProperty.all(Colors.transparent),
+                                  MaterialStateProperty.all(Colors.transparent),
                               value: controller.instagram,
                               onChanged: (value) {
                                 controller.instagram = value;

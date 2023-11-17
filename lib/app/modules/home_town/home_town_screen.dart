@@ -28,6 +28,13 @@ class HomeTownScreen extends BaseView<HomeTownScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.workScreen);
               },
+              skipWidget: Text(
+                "Skip",
+                style: poppinsRegular.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.black,
+                ),
+              ),
             ),
             BodyUI(controller: controller),
           ],

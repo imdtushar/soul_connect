@@ -10,11 +10,12 @@ class CustomAppBar extends StatelessWidget {
   final VoidCallback? skipOnTap;
   final String text;
   final bool showSkip;
+  final Widget? skipWidget;
   const CustomAppBar({
     super.key,
     this.skipOnTap,
     required this.text,
-    this.showSkip = false,
+    this.showSkip = false,  this.skipWidget,
   });
 
   @override
@@ -38,13 +39,7 @@ class CustomAppBar extends StatelessWidget {
                 onTap: skipOnTap,
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
-                child: Text(
-                  "Skip",
-                  style: poppinsRegular.copyWith(
-                    fontSize: 18.sp,
-                    color: AppColors.black,
-                  ),
-                ),
+                child: skipWidget
               ),
             ],
           ),

@@ -28,6 +28,13 @@ class WorkScreen extends BaseView<WorkScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.certification);
               },
+               skipWidget: Text(
+                 "Skip",
+                 style: poppinsRegular.copyWith(
+                   fontSize: 18.sp,
+                   color: AppColors.black,
+                 ),
+               ),
             ),
             BodyUI(controller: controller),
           ],

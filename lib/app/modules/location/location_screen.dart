@@ -31,6 +31,13 @@ class LocationScreen extends BaseView<LocationScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.main);
               },
+              skipWidget: Text(
+                "Skip",
+                style: poppinsRegular.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.black,
+                ),
+              ),
             ),
             SizedBox(
               height: 30.h,

@@ -29,6 +29,13 @@ class ReligionScreen extends BaseView<ReligionScreenController> {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(RouterName.smoke);
               },
+              skipWidget: Text(
+                "Skip",
+                style: poppinsRegular.copyWith(
+                  fontSize: 18.sp,
+                  color: AppColors.black,
+                ),
+              ),
             ),
             SizedBox(
               height: 30.h,
