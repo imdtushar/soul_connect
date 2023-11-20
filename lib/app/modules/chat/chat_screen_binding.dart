@@ -11,6 +11,10 @@ class ChatScreenBinding implements Bindings {
 
 class ChatScreenController extends BaseController {
   TextEditingController search = TextEditingController();
+  var initalPos = 0;
 
   final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
+
+
+
 }

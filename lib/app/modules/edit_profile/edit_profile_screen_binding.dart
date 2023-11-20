@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:photo_manager/photo_manager.dart';
 import 'package:soul_connect/app/core/base/base_controller.dart';
 import 'package:soul_connect/app/core/utils/utility.dart';
 
@@ -110,8 +111,8 @@ class EditProfileScreenController extends BaseController {
   Future<void> selectMultipleImages(int maxLimit) async {
     const maxImageBytes = 1048576;
 
-    List ? selectedImages =
-    // List<AssetEntity> ? selectedImages =
+    // List ? selectedImages =
+    List<AssetEntity> ? selectedImages =
         await AppUtility.multipleImagePicker(maxLimit);
 
     if (selectedImages != null && selectedImages.isNotEmpty) {

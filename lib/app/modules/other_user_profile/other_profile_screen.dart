@@ -72,8 +72,8 @@ class OtherProfileScreen extends BaseView<OtherProfileScreenController> {
                                 .animateToPage(entry.key),
                             child: Container(
                               width: controller.indexValue == entry.key
-                                  ? 20.0
-                                  : 10.0,
+                                  ? 16.0
+                                  : 8.0,
                               height: 8.0,
                               margin: const EdgeInsets.symmetric(
                                 horizontal: 6.0,
@@ -192,6 +192,44 @@ class OtherProfileScreen extends BaseView<OtherProfileScreenController> {
               ),
               child: Column(
                 children: [
+                  //birthday_icon.svg
+
+                  SizedBox(
+                    height: 20,
+                    child: ListView.separated(
+                      separatorBuilder: (context, index) => SizedBox(
+                        width: 10.w,
+                      ),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 20,
+                      itemBuilder: (context, index) {
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              "assets/images/birthday_icon.svg",
+                              height: 15,
+                            ),
+                            SizedBox(
+                              width: 4.w,
+                            ),
+                            Text(
+                              "22",
+                              style: poppinsRegular.copyWith(
+                                fontSize: 12.sp,
+                                color: AppColors.black,
+                              ),
+                              textAlign: TextAlign.end,
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 14.h,
+                  ),
+
                   Row(
                     children: [
                       SvgPicture.asset('assets/images/job_icon.svg'),
@@ -328,7 +366,7 @@ class BlockAndReport extends StatefulWidget {
 }
 
 class _BlockAndReportState extends State<BlockAndReport> {
-  bool isReport = false;
+  bool isReport = true;
 
   @override
   Widget build(BuildContext context) {
@@ -391,7 +429,10 @@ class _BlockAndReportState extends State<BlockAndReport> {
                         InkWell(
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
-                          onTap: () {},
+                          onTap: () {
+                            isReport = false;
+                            setState(() {});
+                          },
                           child: Column(
                             children: [
                               SizedBox(
@@ -439,85 +480,79 @@ class _BlockAndReportState extends State<BlockAndReport> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Make a report',
-                                  style: poppinsRegular.copyWith(
-                                    fontSize: 18.sp,
-                                  ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Make a report',
+                                style: poppinsRegular.copyWith(
+                                  fontSize: 18.sp,
                                 ),
                               ),
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Which best describes what happened? You can add more\ninformation before submitting your report.',
-                                  style: poppinsRegular.copyWith(
-                                    fontSize: 8.sp,
-                                    color: AppColors.black.withOpacity(0.5),
-                                  ),
-                                  textAlign: TextAlign.center,
+                            ),
+                            SizedBox(
+                              height: 8.h,
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Which best describes what happened? You can add more\ninformation before submitting your report.',
+                                style: poppinsRegular.copyWith(
+                                  fontSize: 8.sp,
+                                  color: AppColors.black.withOpacity(0.5),
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: AppColors.black.withOpacity(0.2),
-                              ),
-                              const CommonWidget(
-                                text:
-                                    'Scam, fake account, or selling something',
-                              ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: AppColors.black.withOpacity(0.2),
-                              ),
-                              const CommonWidget(
-                                text: 'Report a photo',
-                              ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: AppColors.black.withOpacity(0.2),
-                              ),
-                              const CommonWidget(
-                                text: 'Inappropriate message or profile',
-                              ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: AppColors.black.withOpacity(0.2),
-                              ),
-                              const CommonWidget(
-                                text: 'In Persson harm or unsafe situation',
-                              ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: AppColors.black.withOpacity(0.2),
-                              ),
-                              const CommonWidget(
-                                text: 'Underage',
-                              ),
-                            ],
-                          ),
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: AppColors.black.withOpacity(0.2),
+                            ),
+                            const CommonWidget(
+                              text: 'Scam, fake account, or selling something',
+                            ),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: AppColors.black.withOpacity(0.2),
+                            ),
+                            const CommonWidget(
+                              text: 'Report a photo',
+                            ),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: AppColors.black.withOpacity(0.2),
+                            ),
+                            const CommonWidget(
+                              text: 'Inappropriate message or profile',
+                            ),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: AppColors.black.withOpacity(0.2),
+                            ),
+                            const CommonWidget(
+                              text: 'In Persson harm or unsafe situation',
+                            ),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              color: AppColors.black.withOpacity(0.2),
+                            ),
+                            const CommonWidget(
+                              text: 'Underage',
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -538,26 +573,31 @@ class CommonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: 10.h,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.w),
-          child: Text(
-            text,
-            style: poppinsRegular.copyWith(
-              fontSize: 12.sp,
-            ),
-            textAlign: TextAlign.start,
+    return InkWell(
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      onTap: () => Get.back(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 10.h,
           ),
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-      ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: Text(
+              text,
+              style: poppinsRegular.copyWith(
+                fontSize: 12.sp,
+              ),
+              textAlign: TextAlign.start,
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+        ],
+      ),
     );
   }
 }

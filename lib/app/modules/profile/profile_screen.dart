@@ -58,26 +58,33 @@ class ProfileScreen extends BaseView<ProfileScreenController> {
                   ),
                   Positioned(
                     left: 25.w,
-                    right: 0,
                     bottom: 26.h,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Alex Costa",
-                          style: poppinsRegular.copyWith(
-                            fontSize: 20.sp,
-                            color: AppColors.white,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 6.h),
+                      decoration: BoxDecoration(
+                        color: AppColors.white.withOpacity(0.6),
+                        borderRadius: BorderRadius.circular(5.r),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Alex Costa",
+                            style: poppinsRegular.copyWith(
+                              fontSize: 20.sp,
+                              color: AppColors.white,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Model",
-                          style: poppinsRegular.copyWith(
-                            fontSize: 12.sp,
-                            color: AppColors.white,
+                          SizedBox(
+                            width: 6.w,
                           ),
-                        ),
-                      ],
+                          SvgPicture.asset(
+                            "assets/images/verify_icon.svg",
+                            height: 18.w,
+                            width: 18.w,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
