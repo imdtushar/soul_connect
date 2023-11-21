@@ -37,6 +37,7 @@ class RouterName {
   static const String controlProfile = '/controlProfile';
   static const String filter = '/filter';
   static const String otherProfile = '/otherProfile';
+  static const String chatDetail = '/chatDetail';
 
   static const String home = '/home';
   static const String profile = '/profile';

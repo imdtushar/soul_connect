@@ -7,6 +7,8 @@ import 'package:soul_connect/app/core/values/text_styles.dart';
 import '../../core/base/base_view.dart';
 import '../../core/values/app_colors.dart';
 import '../widget/custom_app_bar.dart';
+import '../widget/custom_button_style.dart';
+import '../widget/custom_elevated_button.dart';
 import 'other_profile_screen_binding.dart';
 
 class OtherProfileScreen extends BaseView<OtherProfileScreenController> {
@@ -389,77 +391,99 @@ class _BlockAndReportState extends State<BlockAndReport> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () => Get.back(),
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              Text(
-                                'Block',
-                                style: poppinsRegular.copyWith(
-                                  fontSize: 18.sp,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              Text(
-                                'Hides you from each other',
-                                style: poppinsRegular.copyWith(
-                                  fontSize: 8.sp,
-                                  color: AppColors.black.withOpacity(0.5),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 12.h,
-                              ),
-                            ],
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(
+                          'Block',
+                          style: poppinsRegular.copyWith(
+                            fontSize: 25.sp,
                           ),
                         ),
-                        Divider(
-                          height: 1,
-                          thickness: 1,
-                          color: AppColors.black.withOpacity(0.2),
+                        Text(
+                          'Hide you from each other',
+                          style: poppinsRegular.copyWith(
+                            fontSize: 14.sp,
+                            color: AppColors.black,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        CustomElevatedButton(
+                          width: 100.w,
+                          height: 32.h,
+                          onTap: () => Get.back(),
+                          text: 'Block',
+                          buttonStyle: CustomButtonStyles.none,
+                          decoration: CustomButtonStyles
+                              .gradientOnErrorToPinkDecoration,
+                          buttonTextStyle: poppinsMedium.copyWith(
+                            fontSize: 16.sp,
+                            color: AppColors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 38.w),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16.r),
+                      color: AppColors.white,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(
+                          'Report',
+                          style: poppinsRegular.copyWith(
+                            fontSize: 25.sp,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(
+                          'This person violated the community guidelines you will be able to block them afterwards.',
+                          style: poppinsRegular.copyWith(
+                            fontSize: 14.sp,
+                            color: AppColors.black,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        CustomElevatedButton(
+                          width: 100.w,
+                          height: 32.h,
                           onTap: () {
                             isReport = false;
                             setState(() {});
                           },
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              Text(
-                                'Report',
-                                style: poppinsRegular.copyWith(
-                                  fontSize: 18.sp,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              Text(
-                                'Tis person violated the community guidelines.\nYou will be able to block them afterwards.',
-                                style: poppinsRegular.copyWith(
-                                  fontSize: 8.sp,
-                                  color: AppColors.black.withOpacity(0.5),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(
-                                height: 12.h,
-                              ),
-                            ],
+                          text: 'Report',
+                          buttonStyle: CustomButtonStyles.none,
+                          decoration: CustomButtonStyles
+                              .gradientOnErrorToPinkDecoration,
+                          buttonTextStyle: poppinsMedium.copyWith(
+                            fontSize: 14.sp,
+                            color: AppColors.white,
                           ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
                         ),
                       ],
                     ),
@@ -491,7 +515,7 @@ class _BlockAndReportState extends State<BlockAndReport> {
                               child: Text(
                                 'Make a report',
                                 style: poppinsRegular.copyWith(
-                                  fontSize: 18.sp,
+                                  fontSize: 25.sp,
                                 ),
                               ),
                             ),
@@ -500,13 +524,16 @@ class _BlockAndReportState extends State<BlockAndReport> {
                             ),
                             Align(
                               alignment: Alignment.center,
-                              child: Text(
-                                'Which best describes what happened? You can add more\ninformation before submitting your report.',
-                                style: poppinsRegular.copyWith(
-                                  fontSize: 8.sp,
-                                  color: AppColors.black.withOpacity(0.5),
+                              child: Padding(
+                                padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                                child: Text(
+                                  'Which best describes what happened? You can add more information before submitting your report.',
+                                  style: poppinsRegular.copyWith(
+                                    fontSize: 10.sp,
+                                    color: AppColors.black.withOpacity(0.5),
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
                             ),
                             SizedBox(

@@ -1,10 +1,12 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:soul_connect/app/core/base/base_view.dart';
 import 'package:soul_connect/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:soul_connect/app/core/values/text_styles.dart';
 import 'package:soul_connect/app/modules/widget/custom_text_form_field.dart';
+import '../../routes/router_name.dart';
 import 'chat_screen_binding.dart';
 
 class ChatScreen extends BaseView<ChatScreenController> {
@@ -160,97 +162,105 @@ class ChatScreen extends BaseView<ChatScreenController> {
                 ),
                 itemCount: 20,
                 itemBuilder: (context, index) {
-                  return Row(
-                    children: [
-                      SizedBox(
-                        height: 50.w,
-                        width: 50.w,
-                        child: Stack(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage: const NetworkImage(
-                                "https://images.unsplash.com/photo-1528709024086-98a7672e0b9d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                              ),
-                              radius: 24.r,
-                            ),
-                            Positioned(
-                              right: 4.w,
-                              bottom: 6.h,
-                              child: Container(
-                                width: 8.w,
-                                height: 8.w,
-                                decoration: const ShapeDecoration(
-                                  color: Color(0xFF0FE16D),
-                                  shape: OvalBorder(),
+                  return InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () => Get.toNamed(RouterName.chatDetail),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: 50.w,
+                          width: 50.w,
+                          child: Stack(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: const NetworkImage(
+                                  "https://images.unsplash.com/photo-1528709024086-98a7672e0b9d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                                 ),
+                                radius: 24.r,
                               ),
-                            )
-                          ],
+                              Positioned(
+                                right: 4.w,
+                                bottom: 6.h,
+                                child: Container(
+                                  width: 8.w,
+                                  height: 8.w,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFF0FE16D),
+                                    shape: OvalBorder(),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 12.w,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Alex Costa",
-                                  style: poppinsRegular.copyWith(
-                                    fontSize: 18.sp,
-                                    color: AppColors.black,
-                                  ),
-                                ),
-                                Text(
-                                  "2 min ago",
-                                  style: poppinsRegular.copyWith(
-                                    fontSize: 10.sp,
-                                    color: AppColors.chatColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "How are you today?",
-                                  style: poppinsRegular.copyWith(
-                                    fontSize: 10.sp,
-                                    color: AppColors.chatColor,
-                                  ),
-                                ),
-                                Container(
-                                  height: 22.w,
-                                  width: 22.w,
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.all(2.r),
-                                  decoration: BoxDecoration(
-                                    gradient: const LinearGradient(colors: [
-                                      AppColors.gradientStart,
-                                      AppColors.gradientEnd,
-                                    ]),
-                                    borderRadius: BorderRadius.circular(100.r),
-                                  ),
-                                  child: Text(
-                                    '3',
+                        SizedBox(
+                          width: 12.w,
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Alex Costa",
                                     style: poppinsRegular.copyWith(
-                                      fontSize: 10.sp,
-                                      color: AppColors.white,
-                                      overflow: TextOverflow.ellipsis,
+                                      fontSize: 18.sp,
+                                      color: AppColors.black,
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Text(
+                                    "2 min ago",
+                                    style: poppinsRegular.copyWith(
+                                      fontSize: 10.sp,
+                                      color: AppColors.chatColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "How are you today?",
+                                    style: poppinsRegular.copyWith(
+                                      fontSize: 10.sp,
+                                      color: AppColors.chatColor,
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 22.w,
+                                    width: 22.w,
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.all(2.r),
+                                    decoration: BoxDecoration(
+                                      gradient: const LinearGradient(colors: [
+                                        AppColors.gradientStart,
+                                        AppColors.gradientEnd,
+                                      ]),
+                                      borderRadius:
+                                          BorderRadius.circular(100.r),
+                                    ),
+                                    child: Text(
+                                      '3',
+                                      style: poppinsRegular.copyWith(
+                                        fontSize: 10.sp,
+                                        color: AppColors.white,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 },
               ),

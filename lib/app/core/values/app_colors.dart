@@ -25,4 +25,5 @@ abstract class AppColors {
   static const Color blueColor = Color(0xff0057D9);
   static const Color smallColorText = Color(0xff707070);
   static const Color chatColor = Color(0xff797C7B);
+  static const Color chatBgTextField = Color(0xffF3F6F6);
 }
