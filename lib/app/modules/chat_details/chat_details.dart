@@ -267,104 +267,106 @@ class ChatDetailScreen extends BaseView<ChatDetailScreenController> {
             ),
             Align(
               alignment: Alignment.topCenter,
-              child: Column(
-                children: [
-                  if (controller.isDoc)
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () {
-                        controller.isDoc = false;
-                        controller.update();
-                      },
-                      child: SizedBox(
-                        height: MediaQuery.of(context).size.height / 1.55,
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
-                          child: Container(
-                            height: 5.h,
-                            decoration: const BoxDecoration(
-                              color: Colors.transparent,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    if (controller.isDoc)
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () {
+                          controller.isDoc = false;
+                          controller.update();
+                        },
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height / 1.55,
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
+                            child: Container(
+                              height: 5.h,
+                              decoration: const BoxDecoration(
+                                color: Colors.transparent,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  if (controller.isDoc)
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () {
-                        if (controller.isDoc) {
-                          controller.isDoc = true;
-                        } else {
-                          controller.isDoc = false;
-                        }
-                        controller.update();
-                      },
-                      child: Container(
-                        height: 120.h,
-                        width: double.infinity,
-                        margin: EdgeInsets.symmetric(horizontal: 18.w),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.r),
-                          color: AppColors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0x26000000),
-                              blurRadius: 14.54.r,
-                              offset: const Offset(0, 0),
-                              spreadRadius: 0,
-                            )
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {},
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Iconsax.gallery),
-                                  Text(
-                                    'Gallery',
-                                    style: poppinsSemiBold.copyWith(
-                                      fontSize: 12.sp,
-                                      color: AppColors.black,
+                    if (controller.isDoc)
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () {
+                          if (controller.isDoc) {
+                            controller.isDoc = true;
+                          } else {
+                            controller.isDoc = false;
+                          }
+                          controller.update();
+                        },
+                        child: Container(
+                          height: 120.h,
+                          width: double.infinity,
+                          margin: EdgeInsets.symmetric(horizontal: 18.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            color: AppColors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0x26000000),
+                                blurRadius: 14.54.r,
+                                offset: const Offset(0, 0),
+                                spreadRadius: 0,
+                              )
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () {},
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(Iconsax.gallery),
+                                    Text(
+                                      'Gallery',
+                                      style: poppinsSemiBold.copyWith(
+                                        fontSize: 12.sp,
+                                        color: AppColors.black,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 54.w,
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {},
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Iconsax.camera),
-                                  Text(
-                                    'Camera',
-                                    style: poppinsSemiBold.copyWith(
-                                      fontSize: 12.sp,
-                                      color: AppColors.black,
+                              SizedBox(
+                                width: 54.w,
+                              ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () {},
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(Iconsax.camera),
+                                    Text(
+                                      'Camera',
+                                      style: poppinsSemiBold.copyWith(
+                                        fontSize: 12.sp,
+                                        color: AppColors.black,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               ),
             ),
 

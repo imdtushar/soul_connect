@@ -11,11 +11,15 @@ class CustomAppBar extends StatelessWidget {
   final String text;
   final bool showSkip;
   final Widget? skipWidget;
+  final bool showDivider;
+
   const CustomAppBar({
     super.key,
     this.skipOnTap,
     required this.text,
-    this.showSkip = false,  this.skipWidget,
+    this.showSkip = false,
+    this.skipWidget,
+    this.showDivider = true,
   });
 
   @override
@@ -29,18 +33,20 @@ class CustomAppBar extends StatelessWidget {
             vertical: 8.h,
           ),
           child: Row(
-            mainAxisAlignment: showSkip ? MainAxisAlignment.spaceBetween : MainAxisAlignment.start,
+            mainAxisAlignment: showSkip
+                ? MainAxisAlignment.spaceBetween
+                : MainAxisAlignment.start,
             children: [
               CustomImageView(
                 svgPath: ImageConstant.backButton,
                 onTap: () => Get.back(),
               ),
-             if(showSkip) InkWell(
-                onTap: skipOnTap,
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                child: skipWidget
-              ),
+              if (showSkip)
+                InkWell(
+                    onTap: skipOnTap,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    child: skipWidget),
             ],
           ),
         ),
@@ -62,10 +68,11 @@ class CustomAppBar extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        const Divider(
-          color: AppColors.dividerColor,
-          height: 1,
-        ),
+        if (showDivider)
+          const Divider(
+            color: AppColors.dividerColor,
+            height: 1,
+          ),
       ],
     );
   }

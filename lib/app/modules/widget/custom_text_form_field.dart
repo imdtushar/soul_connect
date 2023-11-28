@@ -15,7 +15,7 @@ class CustomTextFormField extends StatefulWidget {
     this.focusNode,
     this.autofocus = true,
     this.textStyle,
-    this.textInputAction = TextInputAction.next,
+    this.textInputAction,
     this.textInputType = TextInputType.text,
     this.maxLines,
     this.hintText,

@@ -173,7 +173,7 @@ class _ExampleCardState extends State<ExampleCard> {
             disableGesture: false,
             options: CarouselOptions(
                 scrollPhysics: const NeverScrollableScrollPhysics(),
-                height: 512.h,
+                height: 600.h,
                 autoPlay: true,
                 viewportFraction: 1,
                 autoPlayCurve: Curves.decelerate,

@@ -118,7 +118,6 @@ class ChatScreen extends BaseView<ChatScreenController> {
                 return Column(
                   children: [
                     Container(
-                      height: 54,
                       padding: EdgeInsets.all(3.r),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100.r),

@@ -22,7 +22,7 @@ class OtherProfileScreen extends BaseView<OtherProfileScreenController> {
         child: Column(
           children: [
             SizedBox(
-              height: 300.h,
+              height: 300,
               width: double.infinity,
               child: Stack(
                 children: [
@@ -46,7 +46,7 @@ class OtherProfileScreen extends BaseView<OtherProfileScreenController> {
                               color: Colors.greenAccent,
                               image: DecorationImage(
                                 image: NetworkImage(
-                                    "https://images.unsplash.com/photo-1566438480900-0609be27a4be?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                                    "https://images.unsplash.com/photo-1547219469-75c19c0bd220?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -95,6 +95,7 @@ class OtherProfileScreen extends BaseView<OtherProfileScreenController> {
                   CustomAppBar(
                     text: '',
                     showSkip: true,
+                    showDivider: false,
                     skipOnTap: () {},
                     skipWidget: SvgPicture.asset(
                       'assets/images/more_option.svg',
